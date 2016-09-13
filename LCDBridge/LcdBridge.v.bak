@@ -1,0 +1,25 @@
+module LcdBridge(rst_n, rs, rw, e, d, cs, sck, mosi, busy)
+
+input rst_n, cs, sck, mosi;
+output rs, rw, e, busy;
+inout [7:0] d;
+
+wire [7:0] ctl;
+
+LcdController lcd(rst_n, ctl, rs, rw, e, d);
+SpiSlave spi(rst_n, cs, sck, mosi, rs, rw, e, d);
+
+endmodule
+
+module LcdController(rst_n, ctl, rs, rw, e, d)
+
+input rst_n;
+input [7:0] ctl;
+output rs, rw ,e;
+inout [7:0] d;
+
+reg [7:0] data;
+
+
+
+endmodule

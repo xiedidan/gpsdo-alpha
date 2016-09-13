@@ -1,0 +1,1222 @@
+TimeQuest Timing Analyzer report for LcdBridge
+Sun Mar 08 22:38:57 2015
+Quartus II 64-Bit Version 12.1 Build 243 01/31/2013 Service Pack 1.33 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'clk'
+ 12. Setup: 'ClockGenerator:gen|divClk'
+ 13. Setup: 'sck'
+ 14. Hold: 'clk'
+ 15. Hold: 'ClockGenerator:gen|divClk'
+ 16. Hold: 'sck'
+ 17. Minimum Pulse Width: 'clk'
+ 18. Minimum Pulse Width: 'sck'
+ 19. Minimum Pulse Width: 'ClockGenerator:gen|divClk'
+ 20. Setup Times
+ 21. Hold Times
+ 22. Clock to Output Times
+ 23. Minimum Clock to Output Times
+ 24. Output Enable Times
+ 25. Minimum Output Enable Times
+ 26. Output Disable Times
+ 27. Minimum Output Disable Times
+ 28. Setup Transfers
+ 29. Hold Transfers
+ 30. Report TCCS
+ 31. Report RSKM
+ 32. Unconstrained Paths
+ 33. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2012 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                        ;
++--------------------+---------------------------------------------------------------------+
+; Quartus II Version ; Version 12.1 Build 243 01/31/2013 Service Pack 1.33 SJ Full Version ;
+; Revision Name      ; LcdBridge                                                           ;
+; Device Family      ; MAX II                                                              ;
+; Device Name        ; EPM570T100C5                                                        ;
+; Timing Models      ; Final                                                               ;
+; Delay Model        ; Slow Model                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                         ;
++--------------------+---------------------------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-4 processors         ; < 0.1%      ;
+;     5-8 processors         ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                               ;
++---------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------------+
+; Clock Name                ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                       ;
++---------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------------+
+; clk                       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }                       ;
+; ClockGenerator:gen|divClk ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { ClockGenerator:gen|divClk } ;
+; sck                       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { sck }                       ;
++---------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------------+
+
+
++-----------------------------------------------------------------+
+; Fmax Summary                                                    ;
++------------+-----------------+---------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                ; Note ;
++------------+-----------------+---------------------------+------+
+; 125.93 MHz ; 125.93 MHz      ; clk                       ;      ;
+; 151.29 MHz ; 151.29 MHz      ; ClockGenerator:gen|divClk ;      ;
+; 179.76 MHz ; 179.76 MHz      ; sck                       ;      ;
++------------+-----------------+---------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++----------------------------------------------------+
+; Setup Summary                                      ;
++---------------------------+--------+---------------+
+; Clock                     ; Slack  ; End Point TNS ;
++---------------------------+--------+---------------+
+; clk                       ; -6.941 ; -62.159       ;
+; ClockGenerator:gen|divClk ; -5.610 ; -215.118      ;
+; sck                       ; -4.563 ; -54.521       ;
++---------------------------+--------+---------------+
+
+
++----------------------------------------------------+
+; Hold Summary                                       ;
++---------------------------+--------+---------------+
+; Clock                     ; Slack  ; End Point TNS ;
++---------------------------+--------+---------------+
+; clk                       ; -1.950 ; -1.950        ;
+; ClockGenerator:gen|divClk ; 1.646  ; 0.000         ;
+; sck                       ; 1.659  ; 0.000         ;
++---------------------------+--------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++----------------------------------------------------+
+; Minimum Pulse Width Summary                        ;
++---------------------------+--------+---------------+
+; Clock                     ; Slack  ; End Point TNS ;
++---------------------------+--------+---------------+
+; clk                       ; -2.289 ; -2.289        ;
+; sck                       ; -2.289 ; -2.289        ;
+; ClockGenerator:gen|divClk ; 0.234  ; 0.000         ;
++---------------------------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clk'                                                                                                                                                ;
++--------+--------------------------------+--------------------------------+---------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                      ; To Node                        ; Launch Clock              ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------+--------------------------------+---------------------------+-------------+--------------+------------+------------+
+; -6.941 ; ClockGenerator:gen|clkCount[7] ; ClockGenerator:gen|clkCount[0] ; clk                       ; clk         ; 1.000        ; 0.000      ; 7.608      ;
+; -6.941 ; ClockGenerator:gen|clkCount[7] ; ClockGenerator:gen|clkCount[1] ; clk                       ; clk         ; 1.000        ; 0.000      ; 7.608      ;
+; -6.941 ; ClockGenerator:gen|clkCount[7] ; ClockGenerator:gen|clkCount[5] ; clk                       ; clk         ; 1.000        ; 0.000      ; 7.608      ;
+; -6.941 ; ClockGenerator:gen|clkCount[7] ; ClockGenerator:gen|clkCount[6] ; clk                       ; clk         ; 1.000        ; 0.000      ; 7.608      ;
+; -6.941 ; ClockGenerator:gen|clkCount[7] ; ClockGenerator:gen|clkCount[7] ; clk                       ; clk         ; 1.000        ; 0.000      ; 7.608      ;
+; -6.941 ; ClockGenerator:gen|clkCount[7] ; ClockGenerator:gen|clkCount[4] ; clk                       ; clk         ; 1.000        ; 0.000      ; 7.608      ;
+; -6.941 ; ClockGenerator:gen|clkCount[7] ; ClockGenerator:gen|clkCount[2] ; clk                       ; clk         ; 1.000        ; 0.000      ; 7.608      ;
+; -6.941 ; ClockGenerator:gen|clkCount[7] ; ClockGenerator:gen|clkCount[3] ; clk                       ; clk         ; 1.000        ; 0.000      ; 7.608      ;
+; -6.767 ; ClockGenerator:gen|clkCount[4] ; ClockGenerator:gen|clkCount[0] ; clk                       ; clk         ; 1.000        ; 0.000      ; 7.434      ;
+; -6.767 ; ClockGenerator:gen|clkCount[4] ; ClockGenerator:gen|clkCount[1] ; clk                       ; clk         ; 1.000        ; 0.000      ; 7.434      ;
+; -6.767 ; ClockGenerator:gen|clkCount[4] ; ClockGenerator:gen|clkCount[5] ; clk                       ; clk         ; 1.000        ; 0.000      ; 7.434      ;
+; -6.767 ; ClockGenerator:gen|clkCount[4] ; ClockGenerator:gen|clkCount[6] ; clk                       ; clk         ; 1.000        ; 0.000      ; 7.434      ;
+; -6.767 ; ClockGenerator:gen|clkCount[4] ; ClockGenerator:gen|clkCount[7] ; clk                       ; clk         ; 1.000        ; 0.000      ; 7.434      ;
+; -6.767 ; ClockGenerator:gen|clkCount[4] ; ClockGenerator:gen|clkCount[4] ; clk                       ; clk         ; 1.000        ; 0.000      ; 7.434      ;
+; -6.767 ; ClockGenerator:gen|clkCount[4] ; ClockGenerator:gen|clkCount[2] ; clk                       ; clk         ; 1.000        ; 0.000      ; 7.434      ;
+; -6.767 ; ClockGenerator:gen|clkCount[4] ; ClockGenerator:gen|clkCount[3] ; clk                       ; clk         ; 1.000        ; 0.000      ; 7.434      ;
+; -6.631 ; ClockGenerator:gen|clkCount[7] ; ClockGenerator:gen|divClk      ; clk                       ; clk         ; 1.000        ; 0.000      ; 7.298      ;
+; -6.592 ; ClockGenerator:gen|clkCount[6] ; ClockGenerator:gen|clkCount[0] ; clk                       ; clk         ; 1.000        ; 0.000      ; 7.259      ;
+; -6.592 ; ClockGenerator:gen|clkCount[6] ; ClockGenerator:gen|clkCount[1] ; clk                       ; clk         ; 1.000        ; 0.000      ; 7.259      ;
+; -6.592 ; ClockGenerator:gen|clkCount[6] ; ClockGenerator:gen|clkCount[5] ; clk                       ; clk         ; 1.000        ; 0.000      ; 7.259      ;
+; -6.592 ; ClockGenerator:gen|clkCount[6] ; ClockGenerator:gen|clkCount[6] ; clk                       ; clk         ; 1.000        ; 0.000      ; 7.259      ;
+; -6.592 ; ClockGenerator:gen|clkCount[6] ; ClockGenerator:gen|clkCount[7] ; clk                       ; clk         ; 1.000        ; 0.000      ; 7.259      ;
+; -6.592 ; ClockGenerator:gen|clkCount[6] ; ClockGenerator:gen|clkCount[4] ; clk                       ; clk         ; 1.000        ; 0.000      ; 7.259      ;
+; -6.592 ; ClockGenerator:gen|clkCount[6] ; ClockGenerator:gen|clkCount[2] ; clk                       ; clk         ; 1.000        ; 0.000      ; 7.259      ;
+; -6.592 ; ClockGenerator:gen|clkCount[6] ; ClockGenerator:gen|clkCount[3] ; clk                       ; clk         ; 1.000        ; 0.000      ; 7.259      ;
+; -6.457 ; ClockGenerator:gen|clkCount[4] ; ClockGenerator:gen|divClk      ; clk                       ; clk         ; 1.000        ; 0.000      ; 7.124      ;
+; -6.282 ; ClockGenerator:gen|clkCount[6] ; ClockGenerator:gen|divClk      ; clk                       ; clk         ; 1.000        ; 0.000      ; 6.949      ;
+; -6.253 ; ClockGenerator:gen|clkCount[0] ; ClockGenerator:gen|clkCount[0] ; clk                       ; clk         ; 1.000        ; 0.000      ; 6.920      ;
+; -6.253 ; ClockGenerator:gen|clkCount[0] ; ClockGenerator:gen|clkCount[1] ; clk                       ; clk         ; 1.000        ; 0.000      ; 6.920      ;
+; -6.253 ; ClockGenerator:gen|clkCount[0] ; ClockGenerator:gen|clkCount[5] ; clk                       ; clk         ; 1.000        ; 0.000      ; 6.920      ;
+; -6.253 ; ClockGenerator:gen|clkCount[0] ; ClockGenerator:gen|clkCount[6] ; clk                       ; clk         ; 1.000        ; 0.000      ; 6.920      ;
+; -6.253 ; ClockGenerator:gen|clkCount[0] ; ClockGenerator:gen|clkCount[7] ; clk                       ; clk         ; 1.000        ; 0.000      ; 6.920      ;
+; -6.253 ; ClockGenerator:gen|clkCount[0] ; ClockGenerator:gen|clkCount[4] ; clk                       ; clk         ; 1.000        ; 0.000      ; 6.920      ;
+; -6.253 ; ClockGenerator:gen|clkCount[0] ; ClockGenerator:gen|clkCount[2] ; clk                       ; clk         ; 1.000        ; 0.000      ; 6.920      ;
+; -6.253 ; ClockGenerator:gen|clkCount[0] ; ClockGenerator:gen|clkCount[3] ; clk                       ; clk         ; 1.000        ; 0.000      ; 6.920      ;
+; -6.246 ; ClockGenerator:gen|clkCount[5] ; ClockGenerator:gen|clkCount[0] ; clk                       ; clk         ; 1.000        ; 0.000      ; 6.913      ;
+; -6.246 ; ClockGenerator:gen|clkCount[5] ; ClockGenerator:gen|clkCount[1] ; clk                       ; clk         ; 1.000        ; 0.000      ; 6.913      ;
+; -6.246 ; ClockGenerator:gen|clkCount[5] ; ClockGenerator:gen|clkCount[5] ; clk                       ; clk         ; 1.000        ; 0.000      ; 6.913      ;
+; -6.246 ; ClockGenerator:gen|clkCount[5] ; ClockGenerator:gen|clkCount[6] ; clk                       ; clk         ; 1.000        ; 0.000      ; 6.913      ;
+; -6.246 ; ClockGenerator:gen|clkCount[5] ; ClockGenerator:gen|clkCount[7] ; clk                       ; clk         ; 1.000        ; 0.000      ; 6.913      ;
+; -6.246 ; ClockGenerator:gen|clkCount[5] ; ClockGenerator:gen|clkCount[4] ; clk                       ; clk         ; 1.000        ; 0.000      ; 6.913      ;
+; -6.246 ; ClockGenerator:gen|clkCount[5] ; ClockGenerator:gen|clkCount[2] ; clk                       ; clk         ; 1.000        ; 0.000      ; 6.913      ;
+; -6.246 ; ClockGenerator:gen|clkCount[5] ; ClockGenerator:gen|clkCount[3] ; clk                       ; clk         ; 1.000        ; 0.000      ; 6.913      ;
+; -5.943 ; ClockGenerator:gen|clkCount[0] ; ClockGenerator:gen|divClk      ; clk                       ; clk         ; 1.000        ; 0.000      ; 6.610      ;
+; -5.936 ; ClockGenerator:gen|clkCount[5] ; ClockGenerator:gen|divClk      ; clk                       ; clk         ; 1.000        ; 0.000      ; 6.603      ;
+; -5.909 ; ClockGenerator:gen|clkCount[1] ; ClockGenerator:gen|clkCount[0] ; clk                       ; clk         ; 1.000        ; 0.000      ; 6.576      ;
+; -5.909 ; ClockGenerator:gen|clkCount[1] ; ClockGenerator:gen|clkCount[1] ; clk                       ; clk         ; 1.000        ; 0.000      ; 6.576      ;
+; -5.909 ; ClockGenerator:gen|clkCount[1] ; ClockGenerator:gen|clkCount[5] ; clk                       ; clk         ; 1.000        ; 0.000      ; 6.576      ;
+; -5.909 ; ClockGenerator:gen|clkCount[1] ; ClockGenerator:gen|clkCount[6] ; clk                       ; clk         ; 1.000        ; 0.000      ; 6.576      ;
+; -5.909 ; ClockGenerator:gen|clkCount[1] ; ClockGenerator:gen|clkCount[7] ; clk                       ; clk         ; 1.000        ; 0.000      ; 6.576      ;
+; -5.909 ; ClockGenerator:gen|clkCount[1] ; ClockGenerator:gen|clkCount[4] ; clk                       ; clk         ; 1.000        ; 0.000      ; 6.576      ;
+; -5.909 ; ClockGenerator:gen|clkCount[1] ; ClockGenerator:gen|clkCount[2] ; clk                       ; clk         ; 1.000        ; 0.000      ; 6.576      ;
+; -5.909 ; ClockGenerator:gen|clkCount[1] ; ClockGenerator:gen|clkCount[3] ; clk                       ; clk         ; 1.000        ; 0.000      ; 6.576      ;
+; -5.599 ; ClockGenerator:gen|clkCount[1] ; ClockGenerator:gen|divClk      ; clk                       ; clk         ; 1.000        ; 0.000      ; 6.266      ;
+; -4.908 ; ClockGenerator:gen|clkCount[3] ; ClockGenerator:gen|clkCount[0] ; clk                       ; clk         ; 1.000        ; 0.000      ; 5.575      ;
+; -4.908 ; ClockGenerator:gen|clkCount[3] ; ClockGenerator:gen|clkCount[1] ; clk                       ; clk         ; 1.000        ; 0.000      ; 5.575      ;
+; -4.908 ; ClockGenerator:gen|clkCount[3] ; ClockGenerator:gen|clkCount[5] ; clk                       ; clk         ; 1.000        ; 0.000      ; 5.575      ;
+; -4.908 ; ClockGenerator:gen|clkCount[3] ; ClockGenerator:gen|clkCount[6] ; clk                       ; clk         ; 1.000        ; 0.000      ; 5.575      ;
+; -4.908 ; ClockGenerator:gen|clkCount[3] ; ClockGenerator:gen|clkCount[7] ; clk                       ; clk         ; 1.000        ; 0.000      ; 5.575      ;
+; -4.908 ; ClockGenerator:gen|clkCount[3] ; ClockGenerator:gen|clkCount[4] ; clk                       ; clk         ; 1.000        ; 0.000      ; 5.575      ;
+; -4.908 ; ClockGenerator:gen|clkCount[3] ; ClockGenerator:gen|clkCount[2] ; clk                       ; clk         ; 1.000        ; 0.000      ; 5.575      ;
+; -4.908 ; ClockGenerator:gen|clkCount[3] ; ClockGenerator:gen|clkCount[3] ; clk                       ; clk         ; 1.000        ; 0.000      ; 5.575      ;
+; -4.760 ; ClockGenerator:gen|clkCount[2] ; ClockGenerator:gen|clkCount[0] ; clk                       ; clk         ; 1.000        ; 0.000      ; 5.427      ;
+; -4.760 ; ClockGenerator:gen|clkCount[2] ; ClockGenerator:gen|clkCount[1] ; clk                       ; clk         ; 1.000        ; 0.000      ; 5.427      ;
+; -4.760 ; ClockGenerator:gen|clkCount[2] ; ClockGenerator:gen|clkCount[5] ; clk                       ; clk         ; 1.000        ; 0.000      ; 5.427      ;
+; -4.760 ; ClockGenerator:gen|clkCount[2] ; ClockGenerator:gen|clkCount[6] ; clk                       ; clk         ; 1.000        ; 0.000      ; 5.427      ;
+; -4.760 ; ClockGenerator:gen|clkCount[2] ; ClockGenerator:gen|clkCount[7] ; clk                       ; clk         ; 1.000        ; 0.000      ; 5.427      ;
+; -4.760 ; ClockGenerator:gen|clkCount[2] ; ClockGenerator:gen|clkCount[4] ; clk                       ; clk         ; 1.000        ; 0.000      ; 5.427      ;
+; -4.760 ; ClockGenerator:gen|clkCount[2] ; ClockGenerator:gen|clkCount[2] ; clk                       ; clk         ; 1.000        ; 0.000      ; 5.427      ;
+; -4.760 ; ClockGenerator:gen|clkCount[2] ; ClockGenerator:gen|clkCount[3] ; clk                       ; clk         ; 1.000        ; 0.000      ; 5.427      ;
+; -4.598 ; ClockGenerator:gen|clkCount[3] ; ClockGenerator:gen|divClk      ; clk                       ; clk         ; 1.000        ; 0.000      ; 5.265      ;
+; -4.450 ; ClockGenerator:gen|clkCount[2] ; ClockGenerator:gen|divClk      ; clk                       ; clk         ; 1.000        ; 0.000      ; 5.117      ;
+; 1.896  ; ClockGenerator:gen|divClk      ; ClockGenerator:gen|divClk      ; ClockGenerator:gen|divClk ; clk         ; 0.500        ; 3.681      ; 2.328      ;
+; 2.396  ; ClockGenerator:gen|divClk      ; ClockGenerator:gen|divClk      ; ClockGenerator:gen|divClk ; clk         ; 1.000        ; 3.681      ; 2.328      ;
++--------+--------------------------------+--------------------------------+---------------------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'ClockGenerator:gen|divClk'                                                                                                                                                              ;
++--------+-------------------------------------------+-------------------------------------------+---------------------------+---------------------------+--------------+------------+------------+
+; Slack  ; From Node                                 ; To Node                                   ; Launch Clock              ; Latch Clock               ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------------+-------------------------------------------+---------------------------+---------------------------+--------------+------------+------------+
+; -5.610 ; LcdController:lcd|tpw[3]                  ; LcdController:lcd|tpw[6]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 6.277      ;
+; -5.550 ; LcdController:lcd|tpw[0]                  ; LcdController:lcd|tpw[6]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 6.217      ;
+; -5.199 ; LcdController:lcd|tpw[0]                  ; LcdController:lcd|tpw[4]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.866      ;
+; -5.170 ; LcdController:lcd|tpw[3]                  ; LcdController:lcd|tpw[0]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.837      ;
+; -5.141 ; LcdController:lcd|tpw[0]                  ; LcdController:lcd|tpw[7]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.808      ;
+; -5.137 ; LcdController:lcd|tpw[0]                  ; LcdController:lcd|tpw[5]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.804      ;
+; -5.110 ; LcdController:lcd|tpw[0]                  ; LcdController:lcd|tpw[0]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.777      ;
+; -4.919 ; LcdController:lcd|tpw[2]                  ; LcdController:lcd|tpw[4]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.586      ;
+; -4.861 ; LcdController:lcd|tpw[2]                  ; LcdController:lcd|tpw[7]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.528      ;
+; -4.857 ; LcdController:lcd|tpw[2]                  ; LcdController:lcd|tpw[5]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.524      ;
+; -4.848 ; LcdController:lcd|tpw[3]                  ; LcdController:lcd|nextState.sWriteDisable ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.515      ;
+; -4.848 ; LcdController:lcd|tpw[3]                  ; LcdController:lcd|tpw[4]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.515      ;
+; -4.847 ; LcdController:lcd|tpw[3]                  ; LcdController:lcd|nextState.sReadEnable   ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.514      ;
+; -4.845 ; LcdController:lcd|tpw[3]                  ; LcdController:lcd|nextState.sWriteEnable  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.512      ;
+; -4.844 ; LcdController:lcd|tpw[0]                  ; LcdController:lcd|tpw[3]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.511      ;
+; -4.840 ; LcdController:lcd|tpw[3]                  ; LcdController:lcd|nextState.sReadDisable  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.507      ;
+; -4.832 ; LcdController:lcd|tpw[3]                  ; LcdController:lcd|tpw[5]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.499      ;
+; -4.802 ; LcdController:lcd|tpw[4]                  ; LcdController:lcd|tpw[7]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.469      ;
+; -4.798 ; LcdController:lcd|tpw[4]                  ; LcdController:lcd|tpw[5]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.465      ;
+; -4.790 ; LcdController:lcd|tpw[3]                  ; LcdController:lcd|tpw[7]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.457      ;
+; -4.788 ; LcdController:lcd|tpw[0]                  ; LcdController:lcd|nextState.sWriteDisable ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.455      ;
+; -4.787 ; LcdController:lcd|tpw[0]                  ; LcdController:lcd|nextState.sReadEnable   ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.454      ;
+; -4.785 ; LcdController:lcd|tpw[0]                  ; LcdController:lcd|nextState.sWriteEnable  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.452      ;
+; -4.780 ; LcdController:lcd|tpw[0]                  ; LcdController:lcd|nextState.sReadDisable  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.447      ;
+; -4.657 ; LcdController:lcd|tpw[1]                  ; LcdController:lcd|tpw[4]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.324      ;
+; -4.655 ; LcdController:lcd|tpw[2]                  ; LcdController:lcd|tpw[6]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.322      ;
+; -4.637 ; LcdController:lcd|tpw[5]                  ; LcdController:lcd|tpw[7]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.304      ;
+; -4.627 ; LcdController:lcd|tpw[1]                  ; LcdController:lcd|tpw[6]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.294      ;
+; -4.599 ; LcdController:lcd|tpw[1]                  ; LcdController:lcd|tpw[7]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.266      ;
+; -4.596 ; LcdController:lcd|tpw[4]                  ; LcdController:lcd|tpw[6]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.263      ;
+; -4.595 ; LcdController:lcd|tpw[1]                  ; LcdController:lcd|tpw[5]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.262      ;
+; -4.564 ; LcdController:lcd|tpw[2]                  ; LcdController:lcd|tpw[3]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.231      ;
+; -4.538 ; LcdController:lcd|thd[0]                  ; LcdController:lcd|nextState.sReadDisable  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.205      ;
+; -4.442 ; LcdController:lcd|tpw[7]                  ; LcdController:lcd|tpw[6]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.109      ;
+; -4.411 ; LcdController:lcd|prevState.sIdle         ; LcdController:lcd|nextState.sWriteSetup   ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.078      ;
+; -4.410 ; LcdController:lcd|prevState.sIdle         ; LcdController:lcd|nextState.sReadSetup    ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.077      ;
+; -4.409 ; LcdController:lcd|prevState.sReadEnable   ; LcdController:lcd|tpw[2]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.076      ;
+; -4.409 ; LcdController:lcd|prevState.sReadEnable   ; LcdController:lcd|tpw[3]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.076      ;
+; -4.409 ; LcdController:lcd|prevState.sReadEnable   ; LcdController:lcd|tpw[4]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.076      ;
+; -4.409 ; LcdController:lcd|prevState.sReadEnable   ; LcdController:lcd|tpw[7]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.076      ;
+; -4.409 ; LcdController:lcd|prevState.sReadEnable   ; LcdController:lcd|tpw[5]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.076      ;
+; -4.409 ; LcdController:lcd|prevState.sReadEnable   ; LcdController:lcd|tpw[0]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.076      ;
+; -4.400 ; LcdController:lcd|thd[2]                  ; LcdController:lcd|nextState.sReadDisable  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 5.067      ;
+; -4.308 ; LcdController:lcd|tpw[5]                  ; LcdController:lcd|tpw[6]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.975      ;
+; -4.305 ; LcdController:lcd|prevState.sReadDisable  ; LcdController:lcd|thd[3]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.972      ;
+; -4.305 ; LcdController:lcd|prevState.sReadDisable  ; LcdController:lcd|thd[1]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.972      ;
+; -4.305 ; LcdController:lcd|prevState.sReadDisable  ; LcdController:lcd|thd[2]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.972      ;
+; -4.305 ; LcdController:lcd|prevState.sReadDisable  ; LcdController:lcd|thd[0]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.972      ;
+; -4.302 ; LcdController:lcd|tpw[1]                  ; LcdController:lcd|tpw[3]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.969      ;
+; -4.262 ; LcdController:lcd|prevState.sWriteSetup   ; LcdController:lcd|nextState.sWriteEnable  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.929      ;
+; -4.256 ; LcdController:lcd|prevState.sReadEnable   ; LcdController:lcd|tpw[6]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.923      ;
+; -4.256 ; LcdController:lcd|prevState.sReadEnable   ; LcdController:lcd|tpw[1]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.923      ;
+; -4.200 ; LcdController:lcd|tpw[0]                  ; LcdController:lcd|tpw[2]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.867      ;
+; -4.193 ; LcdController:lcd|thd[1]                  ; LcdController:lcd|nextState.sReadDisable  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.860      ;
+; -4.187 ; LcdController:lcd|tpw[1]                  ; LcdController:lcd|tpw[0]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.854      ;
+; -4.184 ; LcdController:lcd|tpw[7]                  ; LcdController:lcd|tpw[7]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.851      ;
+; -4.171 ; LcdController:lcd|tpw[6]                  ; LcdController:lcd|tpw[6]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.838      ;
+; -4.170 ; LcdController:lcd|prevState.sReadSetup    ; LcdController:lcd|tsp1[4]                 ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.837      ;
+; -4.170 ; LcdController:lcd|prevState.sReadSetup    ; LcdController:lcd|tsp1[3]                 ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.837      ;
+; -4.170 ; LcdController:lcd|prevState.sReadSetup    ; LcdController:lcd|tsp1[2]                 ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.837      ;
+; -4.170 ; LcdController:lcd|prevState.sReadSetup    ; LcdController:lcd|tsp1[1]                 ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.837      ;
+; -4.170 ; LcdController:lcd|prevState.sReadSetup    ; LcdController:lcd|tsp1[0]                 ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.837      ;
+; -4.153 ; LcdController:lcd|tpw[6]                  ; LcdController:lcd|tpw[7]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.820      ;
+; -4.143 ; LcdController:lcd|tpw[4]                  ; LcdController:lcd|tpw[4]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.810      ;
+; -4.130 ; LcdController:lcd|prevState.sIdle         ; LcdController:lcd|rs                      ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.797      ;
+; -4.087 ; LcdController:lcd|tsp1[0]                 ; LcdController:lcd|nextState.sReadEnable   ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.754      ;
+; -4.086 ; LcdController:lcd|tsp1[0]                 ; LcdController:lcd|nextState.sWriteEnable  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.753      ;
+; -4.077 ; LcdController:lcd|tpw[3]                  ; LcdController:lcd|tpw[3]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.744      ;
+; -4.076 ; LcdController:lcd|tpw[0]                  ; LcdController:lcd|tpw[1]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.743      ;
+; -4.072 ; LcdController:lcd|thd[0]                  ; LcdController:lcd|nextState.sWriteDisable ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.739      ;
+; -4.062 ; LcdController:lcd|prevState.sWriteDisable ; LcdController:lcd|out_d[3]                ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.729      ;
+; -4.012 ; LcdController:lcd|prevState.sWriteEnable  ; LcdController:lcd|tpw[2]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.679      ;
+; -4.012 ; LcdController:lcd|prevState.sWriteEnable  ; LcdController:lcd|tpw[3]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.679      ;
+; -4.012 ; LcdController:lcd|prevState.sWriteEnable  ; LcdController:lcd|tpw[4]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.679      ;
+; -4.012 ; LcdController:lcd|prevState.sWriteEnable  ; LcdController:lcd|tpw[7]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.679      ;
+; -4.012 ; LcdController:lcd|prevState.sWriteEnable  ; LcdController:lcd|tpw[5]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.679      ;
+; -4.012 ; LcdController:lcd|prevState.sWriteEnable  ; LcdController:lcd|tpw[0]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.679      ;
+; -4.002 ; LcdController:lcd|prevState.sReadRelease  ; LcdController:lcd|rs                      ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.669      ;
+; -4.002 ; LcdController:lcd|tpw[7]                  ; LcdController:lcd|tpw[0]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.669      ;
+; -3.949 ; LcdController:lcd|prevState.sWriteRelease ; LcdController:lcd|rs                      ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.616      ;
+; -3.944 ; LcdController:lcd|tsp1[0]                 ; LcdController:lcd|nextState.sReadSetup    ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.611      ;
+; -3.942 ; LcdController:lcd|tsp1[0]                 ; LcdController:lcd|nextState.sWriteSetup   ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.609      ;
+; -3.934 ; LcdController:lcd|thd[2]                  ; LcdController:lcd|nextState.sWriteDisable ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.601      ;
+; -3.868 ; LcdController:lcd|prevState.sWriteRelease ; LcdController:lcd|rw                      ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.535      ;
+; -3.865 ; LcdController:lcd|tpw[1]                  ; LcdController:lcd|nextState.sWriteDisable ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.532      ;
+; -3.864 ; LcdController:lcd|tpw[1]                  ; LcdController:lcd|nextState.sReadEnable   ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.531      ;
+; -3.862 ; LcdController:lcd|tpw[1]                  ; LcdController:lcd|nextState.sWriteEnable  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.529      ;
+; -3.859 ; LcdController:lcd|prevState.sWriteEnable  ; LcdController:lcd|tpw[6]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.526      ;
+; -3.859 ; LcdController:lcd|prevState.sWriteEnable  ; LcdController:lcd|tpw[1]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.526      ;
+; -3.857 ; LcdController:lcd|tpw[1]                  ; LcdController:lcd|nextState.sReadDisable  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.524      ;
+; -3.850 ; LcdController:lcd|thd[3]                  ; LcdController:lcd|nextState.sReadDisable  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.517      ;
+; -3.849 ; LcdController:lcd|tsp1[1]                 ; LcdController:lcd|tsp1[3]                 ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.516      ;
+; -3.836 ; LcdController:lcd|tpw[5]                  ; LcdController:lcd|tpw[0]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.503      ;
+; -3.804 ; LcdController:lcd|prevState.sWriteSetup   ; LcdController:lcd|out_d[6]                ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.471      ;
+; -3.802 ; LcdController:lcd|prevState.sWriteSetup   ; LcdController:lcd|out_d[2]                ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.469      ;
+; -3.794 ; LcdController:lcd|prevState.sWriteSetup   ; LcdController:lcd|tsp1[4]                 ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.461      ;
+; -3.794 ; LcdController:lcd|prevState.sWriteSetup   ; LcdController:lcd|tsp1[3]                 ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.461      ;
+; -3.794 ; LcdController:lcd|prevState.sWriteSetup   ; LcdController:lcd|tsp1[2]                 ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.461      ;
+; -3.794 ; LcdController:lcd|prevState.sWriteSetup   ; LcdController:lcd|tsp1[1]                 ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.461      ;
+; -3.794 ; LcdController:lcd|prevState.sWriteSetup   ; LcdController:lcd|tsp1[0]                 ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 1.000        ; 0.000      ; 4.461      ;
++--------+-------------------------------------------+-------------------------------------------+---------------------------+---------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'sck'                                                                                                                                     ;
++--------+-------------------------------+----------------------+---------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                     ; To Node              ; Launch Clock              ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------+----------------------+---------------------------+-------------+--------------+------------+------------+
+; -4.563 ; SpiSlave:spi|i[1]             ; SpiSlave:spi|miso    ; sck                       ; sck         ; 1.000        ; 0.000      ; 5.230      ;
+; -3.961 ; LcdController:lcd|ret_data[7] ; SpiSlave:spi|miso    ; ClockGenerator:gen|divClk ; sck         ; 0.500        ; -0.109     ; 4.019      ;
+; -3.955 ; SpiSlave:spi|i[3]             ; SpiSlave:spi|data[5] ; sck                       ; sck         ; 1.000        ; 0.000      ; 4.622      ;
+; -3.951 ; LcdController:lcd|ret_data[4] ; SpiSlave:spi|miso    ; ClockGenerator:gen|divClk ; sck         ; 0.500        ; -0.109     ; 4.009      ;
+; -3.940 ; SpiSlave:spi|i[0]             ; SpiSlave:spi|miso    ; sck                       ; sck         ; 1.000        ; 0.000      ; 4.607      ;
+; -3.930 ; SpiSlave:spi|i[1]             ; SpiSlave:spi|data[5] ; sck                       ; sck         ; 1.000        ; 0.000      ; 4.597      ;
+; -3.814 ; SpiSlave:spi|i[3]             ; SpiSlave:spi|data[2] ; sck                       ; sck         ; 1.000        ; 0.000      ; 4.481      ;
+; -3.806 ; SpiSlave:spi|j[1]             ; SpiSlave:spi|ctl[0]  ; sck                       ; sck         ; 1.000        ; 0.000      ; 4.473      ;
+; -3.761 ; SpiSlave:spi|i[3]             ; SpiSlave:spi|data[6] ; sck                       ; sck         ; 1.000        ; 0.000      ; 4.428      ;
+; -3.760 ; SpiSlave:spi|i[3]             ; SpiSlave:spi|data[7] ; sck                       ; sck         ; 1.000        ; 0.000      ; 4.427      ;
+; -3.719 ; SpiSlave:spi|i[3]             ; SpiSlave:spi|data[4] ; sck                       ; sck         ; 1.000        ; 0.000      ; 4.386      ;
+; -3.690 ; SpiSlave:spi|i[1]             ; SpiSlave:spi|data[4] ; sck                       ; sck         ; 1.000        ; 0.000      ; 4.357      ;
+; -3.683 ; SpiSlave:spi|i[3]             ; SpiSlave:spi|ctl[0]  ; sck                       ; sck         ; 1.000        ; 0.000      ; 4.350      ;
+; -3.629 ; SpiSlave:spi|i[2]             ; SpiSlave:spi|data[2] ; sck                       ; sck         ; 1.000        ; 0.000      ; 4.296      ;
+; -3.587 ; SpiSlave:spi|i[0]             ; SpiSlave:spi|data[5] ; sck                       ; sck         ; 1.000        ; 0.000      ; 4.254      ;
+; -3.583 ; SpiSlave:spi|i[2]             ; SpiSlave:spi|data[6] ; sck                       ; sck         ; 1.000        ; 0.000      ; 4.250      ;
+; -3.582 ; SpiSlave:spi|i[2]             ; SpiSlave:spi|data[7] ; sck                       ; sck         ; 1.000        ; 0.000      ; 4.249      ;
+; -3.477 ; SpiSlave:spi|j[2]             ; SpiSlave:spi|ctl[0]  ; sck                       ; sck         ; 1.000        ; 0.000      ; 4.144      ;
+; -3.451 ; SpiSlave:spi|j[1]             ; SpiSlave:spi|ctl[1]  ; sck                       ; sck         ; 1.000        ; 0.000      ; 4.118      ;
+; -3.448 ; LcdController:lcd|ret_data[5] ; SpiSlave:spi|miso    ; ClockGenerator:gen|divClk ; sck         ; 0.500        ; -0.109     ; 3.506      ;
+; -3.344 ; SpiSlave:spi|i[0]             ; SpiSlave:spi|data[4] ; sck                       ; sck         ; 1.000        ; 0.000      ; 4.011      ;
+; -3.328 ; SpiSlave:spi|i[3]             ; SpiSlave:spi|ctl[1]  ; sck                       ; sck         ; 1.000        ; 0.000      ; 3.995      ;
+; -3.302 ; SpiSlave:spi|i[1]             ; SpiSlave:spi|data[2] ; sck                       ; sck         ; 1.000        ; 0.000      ; 3.969      ;
+; -3.291 ; SpiSlave:spi|i[3]             ; SpiSlave:spi|data[0] ; sck                       ; sck         ; 1.000        ; 0.000      ; 3.958      ;
+; -3.286 ; SpiSlave:spi|i[3]             ; SpiSlave:spi|data[1] ; sck                       ; sck         ; 1.000        ; 0.000      ; 3.953      ;
+; -3.262 ; SpiSlave:spi|i[1]             ; SpiSlave:spi|data[0] ; sck                       ; sck         ; 1.000        ; 0.000      ; 3.929      ;
+; -3.261 ; SpiSlave:spi|i[1]             ; SpiSlave:spi|data[1] ; sck                       ; sck         ; 1.000        ; 0.000      ; 3.928      ;
+; -3.250 ; SpiSlave:spi|i[1]             ; SpiSlave:spi|data[6] ; sck                       ; sck         ; 1.000        ; 0.000      ; 3.917      ;
+; -3.249 ; SpiSlave:spi|i[1]             ; SpiSlave:spi|data[7] ; sck                       ; sck         ; 1.000        ; 0.000      ; 3.916      ;
+; -3.122 ; SpiSlave:spi|j[2]             ; SpiSlave:spi|ctl[1]  ; sck                       ; sck         ; 1.000        ; 0.000      ; 3.789      ;
+; -3.096 ; LcdController:lcd|ret_data[3] ; SpiSlave:spi|miso    ; ClockGenerator:gen|divClk ; sck         ; 0.500        ; -0.109     ; 3.154      ;
+; -3.064 ; LcdController:lcd|ret_data[0] ; SpiSlave:spi|miso    ; ClockGenerator:gen|divClk ; sck         ; 0.500        ; -0.109     ; 3.122      ;
+; -3.029 ; SpiSlave:spi|i[3]             ; SpiSlave:spi|data[3] ; sck                       ; sck         ; 1.000        ; 0.000      ; 3.696      ;
+; -2.918 ; SpiSlave:spi|i[0]             ; SpiSlave:spi|data[1] ; sck                       ; sck         ; 1.000        ; 0.000      ; 3.585      ;
+; -2.916 ; SpiSlave:spi|i[0]             ; SpiSlave:spi|data[0] ; sck                       ; sck         ; 1.000        ; 0.000      ; 3.583      ;
+; -2.880 ; SpiSlave:spi|i[2]             ; SpiSlave:spi|data[1] ; sck                       ; sck         ; 1.000        ; 0.000      ; 3.547      ;
+; -2.878 ; SpiSlave:spi|i[2]             ; SpiSlave:spi|data[0] ; sck                       ; sck         ; 1.000        ; 0.000      ; 3.545      ;
+; -2.868 ; SpiSlave:spi|i[2]             ; SpiSlave:spi|data[4] ; sck                       ; sck         ; 1.000        ; 0.000      ; 3.535      ;
+; -2.868 ; SpiSlave:spi|i[0]             ; SpiSlave:spi|data[7] ; sck                       ; sck         ; 1.000        ; 0.000      ; 3.535      ;
+; -2.844 ; SpiSlave:spi|i[2]             ; SpiSlave:spi|data[3] ; sck                       ; sck         ; 1.000        ; 0.000      ; 3.511      ;
+; -2.827 ; SpiSlave:spi|i[2]             ; SpiSlave:spi|miso    ; sck                       ; sck         ; 1.000        ; 0.000      ; 3.494      ;
+; -2.660 ; SpiSlave:spi|i[0]             ; SpiSlave:spi|data[6] ; sck                       ; sck         ; 1.000        ; 0.000      ; 3.327      ;
+; -2.654 ; SpiSlave:spi|i[0]             ; SpiSlave:spi|data[2] ; sck                       ; sck         ; 1.000        ; 0.000      ; 3.321      ;
+; -2.543 ; LcdController:lcd|ret_data[1] ; SpiSlave:spi|miso    ; ClockGenerator:gen|divClk ; sck         ; 0.500        ; -0.109     ; 2.601      ;
+; -2.520 ; LcdController:lcd|ret_data[6] ; SpiSlave:spi|miso    ; ClockGenerator:gen|divClk ; sck         ; 0.500        ; -0.109     ; 2.578      ;
+; -2.517 ; SpiSlave:spi|i[1]             ; SpiSlave:spi|data[3] ; sck                       ; sck         ; 1.000        ; 0.000      ; 3.184      ;
+; -2.434 ; SpiSlave:spi|j[0]             ; SpiSlave:spi|ctl[0]  ; sck                       ; sck         ; 1.000        ; 0.000      ; 3.101      ;
+; -2.400 ; SpiSlave:spi|i[2]             ; SpiSlave:spi|data[5] ; sck                       ; sck         ; 1.000        ; 0.000      ; 3.067      ;
+; -2.337 ; SpiSlave:spi|i[0]             ; SpiSlave:spi|i[2]    ; sck                       ; sck         ; 1.000        ; 0.000      ; 3.004      ;
+; -2.223 ; SpiSlave:spi|data[0]          ; SpiSlave:spi|data[0] ; sck                       ; sck         ; 1.000        ; 0.000      ; 2.890      ;
+; -2.204 ; SpiSlave:spi|i[3]             ; SpiSlave:spi|j[0]    ; sck                       ; sck         ; 1.000        ; 0.000      ; 2.871      ;
+; -2.204 ; SpiSlave:spi|i[3]             ; SpiSlave:spi|j[1]    ; sck                       ; sck         ; 1.000        ; 0.000      ; 2.871      ;
+; -2.204 ; SpiSlave:spi|i[3]             ; SpiSlave:spi|j[2]    ; sck                       ; sck         ; 1.000        ; 0.000      ; 2.871      ;
+; -2.186 ; SpiSlave:spi|j[2]             ; SpiSlave:spi|j[2]    ; sck                       ; sck         ; 1.000        ; 0.000      ; 2.853      ;
+; -2.185 ; SpiSlave:spi|i[3]             ; SpiSlave:spi|miso    ; sck                       ; sck         ; 1.000        ; 0.000      ; 2.852      ;
+; -2.135 ; SpiSlave:spi|data[6]          ; SpiSlave:spi|data[6] ; sck                       ; sck         ; 1.000        ; 0.000      ; 2.802      ;
+; -2.080 ; SpiSlave:spi|data[5]          ; SpiSlave:spi|data[5] ; sck                       ; sck         ; 1.000        ; 0.000      ; 2.747      ;
+; -2.068 ; SpiSlave:spi|data[2]          ; SpiSlave:spi|data[2] ; sck                       ; sck         ; 1.000        ; 0.000      ; 2.735      ;
+; -2.038 ; LcdController:lcd|ret_data[2] ; SpiSlave:spi|miso    ; ClockGenerator:gen|divClk ; sck         ; 0.500        ; -0.109     ; 2.096      ;
+; -1.926 ; SpiSlave:spi|data[7]          ; SpiSlave:spi|data[7] ; sck                       ; sck         ; 1.000        ; 0.000      ; 2.593      ;
+; -1.893 ; SpiSlave:spi|data[1]          ; SpiSlave:spi|data[1] ; sck                       ; sck         ; 1.000        ; 0.000      ; 2.560      ;
+; -1.878 ; SpiSlave:spi|ctl[1]           ; SpiSlave:spi|ctl[1]  ; sck                       ; sck         ; 1.000        ; 0.000      ; 2.545      ;
+; -1.862 ; SpiSlave:spi|i[2]             ; SpiSlave:spi|i[3]    ; sck                       ; sck         ; 1.000        ; 0.000      ; 2.529      ;
+; -1.812 ; SpiSlave:spi|j[0]             ; SpiSlave:spi|j[2]    ; sck                       ; sck         ; 1.000        ; 0.000      ; 2.479      ;
+; -1.809 ; SpiSlave:spi|j[0]             ; SpiSlave:spi|j[1]    ; sck                       ; sck         ; 1.000        ; 0.000      ; 2.476      ;
+; -1.795 ; SpiSlave:spi|data[4]          ; SpiSlave:spi|data[4] ; sck                       ; sck         ; 1.000        ; 0.000      ; 2.462      ;
+; -1.770 ; SpiSlave:spi|i[0]             ; SpiSlave:spi|i[1]    ; sck                       ; sck         ; 1.000        ; 0.000      ; 2.437      ;
+; -1.770 ; SpiSlave:spi|i[0]             ; SpiSlave:spi|i[3]    ; sck                       ; sck         ; 1.000        ; 0.000      ; 2.437      ;
+; -1.769 ; SpiSlave:spi|i[0]             ; SpiSlave:spi|data[3] ; sck                       ; sck         ; 1.000        ; 0.000      ; 2.436      ;
+; -1.765 ; SpiSlave:spi|i[1]             ; SpiSlave:spi|i[2]    ; sck                       ; sck         ; 1.000        ; 0.000      ; 2.432      ;
+; -1.746 ; SpiSlave:spi|i[1]             ; SpiSlave:spi|i[3]    ; sck                       ; sck         ; 1.000        ; 0.000      ; 2.413      ;
+; -1.745 ; SpiSlave:spi|i[1]             ; SpiSlave:spi|i[1]    ; sck                       ; sck         ; 1.000        ; 0.000      ; 2.412      ;
+; -1.736 ; SpiSlave:spi|ctl[0]           ; SpiSlave:spi|ctl[0]  ; sck                       ; sck         ; 1.000        ; 0.000      ; 2.403      ;
+; -1.722 ; SpiSlave:spi|data[3]          ; SpiSlave:spi|data[3] ; sck                       ; sck         ; 1.000        ; 0.000      ; 2.389      ;
+; -1.685 ; SpiSlave:spi|j[1]             ; SpiSlave:spi|j[2]    ; sck                       ; sck         ; 1.000        ; 0.000      ; 2.352      ;
+; -1.596 ; SpiSlave:spi|j[0]             ; SpiSlave:spi|ctl[1]  ; sck                       ; sck         ; 1.000        ; 0.000      ; 2.263      ;
+; -1.522 ; SpiSlave:spi|i[2]             ; SpiSlave:spi|i[2]    ; sck                       ; sck         ; 1.000        ; 0.000      ; 2.189      ;
+; -1.509 ; SpiSlave:spi|i[3]             ; SpiSlave:spi|i[3]    ; sck                       ; sck         ; 1.000        ; 0.000      ; 2.176      ;
+; -1.505 ; SpiSlave:spi|i[0]             ; SpiSlave:spi|i[0]    ; sck                       ; sck         ; 1.000        ; 0.000      ; 2.172      ;
+; -1.494 ; SpiSlave:spi|j[0]             ; SpiSlave:spi|j[0]    ; sck                       ; sck         ; 1.000        ; 0.000      ; 2.161      ;
+; -1.213 ; SpiSlave:spi|j[1]             ; SpiSlave:spi|j[1]    ; sck                       ; sck         ; 1.000        ; 0.000      ; 1.880      ;
++--------+-------------------------------+----------------------+---------------------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk'                                                                                                                                                 ;
++--------+--------------------------------+--------------------------------+---------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                      ; To Node                        ; Launch Clock              ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------+--------------------------------+---------------------------+-------------+--------------+------------+------------+
+; -1.950 ; ClockGenerator:gen|divClk      ; ClockGenerator:gen|divClk      ; ClockGenerator:gen|divClk ; clk         ; 0.000        ; 3.681      ; 2.328      ;
+; -1.450 ; ClockGenerator:gen|divClk      ; ClockGenerator:gen|divClk      ; ClockGenerator:gen|divClk ; clk         ; -0.500       ; 3.681      ; 2.328      ;
+; 2.116  ; ClockGenerator:gen|clkCount[0] ; ClockGenerator:gen|clkCount[0] ; clk                       ; clk         ; 0.000        ; 0.000      ; 2.337      ;
+; 2.117  ; ClockGenerator:gen|clkCount[7] ; ClockGenerator:gen|clkCount[7] ; clk                       ; clk         ; 0.000        ; 0.000      ; 2.338      ;
+; 2.134  ; ClockGenerator:gen|clkCount[1] ; ClockGenerator:gen|clkCount[1] ; clk                       ; clk         ; 0.000        ; 0.000      ; 2.355      ;
+; 2.144  ; ClockGenerator:gen|clkCount[2] ; ClockGenerator:gen|clkCount[2] ; clk                       ; clk         ; 0.000        ; 0.000      ; 2.365      ;
+; 2.230  ; ClockGenerator:gen|clkCount[5] ; ClockGenerator:gen|clkCount[5] ; clk                       ; clk         ; 0.000        ; 0.000      ; 2.451      ;
+; 2.231  ; ClockGenerator:gen|clkCount[6] ; ClockGenerator:gen|clkCount[6] ; clk                       ; clk         ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231  ; ClockGenerator:gen|clkCount[4] ; ClockGenerator:gen|clkCount[4] ; clk                       ; clk         ; 0.000        ; 0.000      ; 2.452      ;
+; 2.242  ; ClockGenerator:gen|clkCount[3] ; ClockGenerator:gen|clkCount[3] ; clk                       ; clk         ; 0.000        ; 0.000      ; 2.463      ;
+; 2.948  ; ClockGenerator:gen|clkCount[0] ; ClockGenerator:gen|clkCount[1] ; clk                       ; clk         ; 0.000        ; 0.000      ; 3.169      ;
+; 2.966  ; ClockGenerator:gen|clkCount[1] ; ClockGenerator:gen|clkCount[2] ; clk                       ; clk         ; 0.000        ; 0.000      ; 3.187      ;
+; 2.976  ; ClockGenerator:gen|clkCount[2] ; ClockGenerator:gen|clkCount[3] ; clk                       ; clk         ; 0.000        ; 0.000      ; 3.197      ;
+; 3.059  ; ClockGenerator:gen|clkCount[0] ; ClockGenerator:gen|clkCount[2] ; clk                       ; clk         ; 0.000        ; 0.000      ; 3.280      ;
+; 3.077  ; ClockGenerator:gen|clkCount[1] ; ClockGenerator:gen|clkCount[3] ; clk                       ; clk         ; 0.000        ; 0.000      ; 3.298      ;
+; 3.087  ; ClockGenerator:gen|clkCount[2] ; ClockGenerator:gen|clkCount[4] ; clk                       ; clk         ; 0.000        ; 0.000      ; 3.308      ;
+; 3.170  ; ClockGenerator:gen|clkCount[5] ; ClockGenerator:gen|clkCount[6] ; clk                       ; clk         ; 0.000        ; 0.000      ; 3.391      ;
+; 3.170  ; ClockGenerator:gen|clkCount[0] ; ClockGenerator:gen|clkCount[3] ; clk                       ; clk         ; 0.000        ; 0.000      ; 3.391      ;
+; 3.171  ; ClockGenerator:gen|clkCount[6] ; ClockGenerator:gen|clkCount[7] ; clk                       ; clk         ; 0.000        ; 0.000      ; 3.392      ;
+; 3.182  ; ClockGenerator:gen|clkCount[3] ; ClockGenerator:gen|clkCount[4] ; clk                       ; clk         ; 0.000        ; 0.000      ; 3.403      ;
+; 3.188  ; ClockGenerator:gen|clkCount[1] ; ClockGenerator:gen|clkCount[4] ; clk                       ; clk         ; 0.000        ; 0.000      ; 3.409      ;
+; 3.281  ; ClockGenerator:gen|clkCount[5] ; ClockGenerator:gen|clkCount[7] ; clk                       ; clk         ; 0.000        ; 0.000      ; 3.502      ;
+; 3.281  ; ClockGenerator:gen|clkCount[0] ; ClockGenerator:gen|clkCount[4] ; clk                       ; clk         ; 0.000        ; 0.000      ; 3.502      ;
+; 3.492  ; ClockGenerator:gen|clkCount[4] ; ClockGenerator:gen|clkCount[5] ; clk                       ; clk         ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492  ; ClockGenerator:gen|clkCount[4] ; ClockGenerator:gen|clkCount[6] ; clk                       ; clk         ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492  ; ClockGenerator:gen|clkCount[4] ; ClockGenerator:gen|clkCount[7] ; clk                       ; clk         ; 0.000        ; 0.000      ; 3.713      ;
+; 3.556  ; ClockGenerator:gen|clkCount[2] ; ClockGenerator:gen|clkCount[5] ; clk                       ; clk         ; 0.000        ; 0.000      ; 3.777      ;
+; 3.556  ; ClockGenerator:gen|clkCount[2] ; ClockGenerator:gen|clkCount[6] ; clk                       ; clk         ; 0.000        ; 0.000      ; 3.777      ;
+; 3.556  ; ClockGenerator:gen|clkCount[2] ; ClockGenerator:gen|clkCount[7] ; clk                       ; clk         ; 0.000        ; 0.000      ; 3.777      ;
+; 3.651  ; ClockGenerator:gen|clkCount[3] ; ClockGenerator:gen|clkCount[5] ; clk                       ; clk         ; 0.000        ; 0.000      ; 3.872      ;
+; 3.651  ; ClockGenerator:gen|clkCount[3] ; ClockGenerator:gen|clkCount[6] ; clk                       ; clk         ; 0.000        ; 0.000      ; 3.872      ;
+; 3.651  ; ClockGenerator:gen|clkCount[3] ; ClockGenerator:gen|clkCount[7] ; clk                       ; clk         ; 0.000        ; 0.000      ; 3.872      ;
+; 3.657  ; ClockGenerator:gen|clkCount[1] ; ClockGenerator:gen|clkCount[5] ; clk                       ; clk         ; 0.000        ; 0.000      ; 3.878      ;
+; 3.657  ; ClockGenerator:gen|clkCount[1] ; ClockGenerator:gen|clkCount[6] ; clk                       ; clk         ; 0.000        ; 0.000      ; 3.878      ;
+; 3.657  ; ClockGenerator:gen|clkCount[1] ; ClockGenerator:gen|clkCount[7] ; clk                       ; clk         ; 0.000        ; 0.000      ; 3.878      ;
+; 3.750  ; ClockGenerator:gen|clkCount[0] ; ClockGenerator:gen|clkCount[5] ; clk                       ; clk         ; 0.000        ; 0.000      ; 3.971      ;
+; 3.750  ; ClockGenerator:gen|clkCount[0] ; ClockGenerator:gen|clkCount[6] ; clk                       ; clk         ; 0.000        ; 0.000      ; 3.971      ;
+; 3.750  ; ClockGenerator:gen|clkCount[0] ; ClockGenerator:gen|clkCount[7] ; clk                       ; clk         ; 0.000        ; 0.000      ; 3.971      ;
+; 4.896  ; ClockGenerator:gen|clkCount[2] ; ClockGenerator:gen|divClk      ; clk                       ; clk         ; 0.000        ; 0.000      ; 5.117      ;
+; 5.044  ; ClockGenerator:gen|clkCount[3] ; ClockGenerator:gen|divClk      ; clk                       ; clk         ; 0.000        ; 0.000      ; 5.265      ;
+; 5.206  ; ClockGenerator:gen|clkCount[2] ; ClockGenerator:gen|clkCount[0] ; clk                       ; clk         ; 0.000        ; 0.000      ; 5.427      ;
+; 5.206  ; ClockGenerator:gen|clkCount[2] ; ClockGenerator:gen|clkCount[1] ; clk                       ; clk         ; 0.000        ; 0.000      ; 5.427      ;
+; 5.354  ; ClockGenerator:gen|clkCount[3] ; ClockGenerator:gen|clkCount[0] ; clk                       ; clk         ; 0.000        ; 0.000      ; 5.575      ;
+; 5.354  ; ClockGenerator:gen|clkCount[3] ; ClockGenerator:gen|clkCount[1] ; clk                       ; clk         ; 0.000        ; 0.000      ; 5.575      ;
+; 5.354  ; ClockGenerator:gen|clkCount[3] ; ClockGenerator:gen|clkCount[2] ; clk                       ; clk         ; 0.000        ; 0.000      ; 5.575      ;
+; 6.045  ; ClockGenerator:gen|clkCount[1] ; ClockGenerator:gen|divClk      ; clk                       ; clk         ; 0.000        ; 0.000      ; 6.266      ;
+; 6.355  ; ClockGenerator:gen|clkCount[1] ; ClockGenerator:gen|clkCount[0] ; clk                       ; clk         ; 0.000        ; 0.000      ; 6.576      ;
+; 6.382  ; ClockGenerator:gen|clkCount[5] ; ClockGenerator:gen|divClk      ; clk                       ; clk         ; 0.000        ; 0.000      ; 6.603      ;
+; 6.389  ; ClockGenerator:gen|clkCount[0] ; ClockGenerator:gen|divClk      ; clk                       ; clk         ; 0.000        ; 0.000      ; 6.610      ;
+; 6.692  ; ClockGenerator:gen|clkCount[5] ; ClockGenerator:gen|clkCount[0] ; clk                       ; clk         ; 0.000        ; 0.000      ; 6.913      ;
+; 6.692  ; ClockGenerator:gen|clkCount[5] ; ClockGenerator:gen|clkCount[1] ; clk                       ; clk         ; 0.000        ; 0.000      ; 6.913      ;
+; 6.692  ; ClockGenerator:gen|clkCount[5] ; ClockGenerator:gen|clkCount[4] ; clk                       ; clk         ; 0.000        ; 0.000      ; 6.913      ;
+; 6.692  ; ClockGenerator:gen|clkCount[5] ; ClockGenerator:gen|clkCount[2] ; clk                       ; clk         ; 0.000        ; 0.000      ; 6.913      ;
+; 6.692  ; ClockGenerator:gen|clkCount[5] ; ClockGenerator:gen|clkCount[3] ; clk                       ; clk         ; 0.000        ; 0.000      ; 6.913      ;
+; 6.728  ; ClockGenerator:gen|clkCount[6] ; ClockGenerator:gen|divClk      ; clk                       ; clk         ; 0.000        ; 0.000      ; 6.949      ;
+; 6.903  ; ClockGenerator:gen|clkCount[4] ; ClockGenerator:gen|divClk      ; clk                       ; clk         ; 0.000        ; 0.000      ; 7.124      ;
+; 7.038  ; ClockGenerator:gen|clkCount[6] ; ClockGenerator:gen|clkCount[0] ; clk                       ; clk         ; 0.000        ; 0.000      ; 7.259      ;
+; 7.038  ; ClockGenerator:gen|clkCount[6] ; ClockGenerator:gen|clkCount[1] ; clk                       ; clk         ; 0.000        ; 0.000      ; 7.259      ;
+; 7.038  ; ClockGenerator:gen|clkCount[6] ; ClockGenerator:gen|clkCount[5] ; clk                       ; clk         ; 0.000        ; 0.000      ; 7.259      ;
+; 7.038  ; ClockGenerator:gen|clkCount[6] ; ClockGenerator:gen|clkCount[4] ; clk                       ; clk         ; 0.000        ; 0.000      ; 7.259      ;
+; 7.038  ; ClockGenerator:gen|clkCount[6] ; ClockGenerator:gen|clkCount[2] ; clk                       ; clk         ; 0.000        ; 0.000      ; 7.259      ;
+; 7.038  ; ClockGenerator:gen|clkCount[6] ; ClockGenerator:gen|clkCount[3] ; clk                       ; clk         ; 0.000        ; 0.000      ; 7.259      ;
+; 7.077  ; ClockGenerator:gen|clkCount[7] ; ClockGenerator:gen|divClk      ; clk                       ; clk         ; 0.000        ; 0.000      ; 7.298      ;
+; 7.213  ; ClockGenerator:gen|clkCount[4] ; ClockGenerator:gen|clkCount[0] ; clk                       ; clk         ; 0.000        ; 0.000      ; 7.434      ;
+; 7.213  ; ClockGenerator:gen|clkCount[4] ; ClockGenerator:gen|clkCount[1] ; clk                       ; clk         ; 0.000        ; 0.000      ; 7.434      ;
+; 7.213  ; ClockGenerator:gen|clkCount[4] ; ClockGenerator:gen|clkCount[2] ; clk                       ; clk         ; 0.000        ; 0.000      ; 7.434      ;
+; 7.213  ; ClockGenerator:gen|clkCount[4] ; ClockGenerator:gen|clkCount[3] ; clk                       ; clk         ; 0.000        ; 0.000      ; 7.434      ;
+; 7.387  ; ClockGenerator:gen|clkCount[7] ; ClockGenerator:gen|clkCount[0] ; clk                       ; clk         ; 0.000        ; 0.000      ; 7.608      ;
+; 7.387  ; ClockGenerator:gen|clkCount[7] ; ClockGenerator:gen|clkCount[1] ; clk                       ; clk         ; 0.000        ; 0.000      ; 7.608      ;
+; 7.387  ; ClockGenerator:gen|clkCount[7] ; ClockGenerator:gen|clkCount[5] ; clk                       ; clk         ; 0.000        ; 0.000      ; 7.608      ;
+; 7.387  ; ClockGenerator:gen|clkCount[7] ; ClockGenerator:gen|clkCount[6] ; clk                       ; clk         ; 0.000        ; 0.000      ; 7.608      ;
+; 7.387  ; ClockGenerator:gen|clkCount[7] ; ClockGenerator:gen|clkCount[4] ; clk                       ; clk         ; 0.000        ; 0.000      ; 7.608      ;
+; 7.387  ; ClockGenerator:gen|clkCount[7] ; ClockGenerator:gen|clkCount[2] ; clk                       ; clk         ; 0.000        ; 0.000      ; 7.608      ;
+; 7.387  ; ClockGenerator:gen|clkCount[7] ; ClockGenerator:gen|clkCount[3] ; clk                       ; clk         ; 0.000        ; 0.000      ; 7.608      ;
++--------+--------------------------------+--------------------------------+---------------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'ClockGenerator:gen|divClk'                                                                                                                                                              ;
++-------+-------------------------------------------+-------------------------------------------+---------------------------+---------------------------+--------------+------------+------------+
+; Slack ; From Node                                 ; To Node                                   ; Launch Clock              ; Latch Clock               ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------------+-------------------------------------------+---------------------------+---------------------------+--------------+------------+------------+
+; 1.646 ; LcdController:lcd|tpw[2]                  ; LcdController:lcd|tpw[3]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 1.867      ;
+; 1.646 ; LcdController:lcd|tsp1[4]                 ; LcdController:lcd|tsp1[0]                 ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 1.867      ;
+; 1.656 ; LcdController:lcd|nextState.sReadRelease  ; LcdController:lcd|prevState.sReadRelease  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 1.877      ;
+; 1.660 ; LcdController:lcd|nextState.sWriteRelease ; LcdController:lcd|prevState.sWriteRelease ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 1.881      ;
+; 1.697 ; LcdController:lcd|trest[2]                ; LcdController:lcd|trest[2]                ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 1.918      ;
+; 1.700 ; LcdController:lcd|trest[2]                ; LcdController:lcd|trest[3]                ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 1.921      ;
+; 1.700 ; LcdController:lcd|trest[2]                ; LcdController:lcd|trest[0]                ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 1.921      ;
+; 1.708 ; LcdController:lcd|trest[1]                ; LcdController:lcd|trest[1]                ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 1.929      ;
+; 1.748 ; LcdController:lcd|thd[3]                  ; LcdController:lcd|thd[3]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 1.969      ;
+; 1.752 ; LcdController:lcd|thd[3]                  ; LcdController:lcd|thd[0]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 1.973      ;
+; 1.756 ; LcdController:lcd|thd[3]                  ; LcdController:lcd|thd[1]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 1.977      ;
+; 1.756 ; LcdController:lcd|thd[2]                  ; LcdController:lcd|thd[2]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 1.977      ;
+; 1.975 ; LcdController:lcd|thd[1]                  ; LcdController:lcd|thd[1]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.196      ;
+; 1.982 ; LcdController:lcd|thd[1]                  ; LcdController:lcd|thd[2]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.203      ;
+; 1.988 ; LcdController:lcd|thd[1]                  ; LcdController:lcd|thd[0]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.209      ;
+; 1.991 ; LcdController:lcd|trest[3]                ; LcdController:lcd|trest[3]                ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.212      ;
+; 1.993 ; LcdController:lcd|thd[1]                  ; LcdController:lcd|thd[3]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.214      ;
+; 1.995 ; LcdController:lcd|trest[3]                ; LcdController:lcd|trest[0]                ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.216      ;
+; 2.000 ; LcdController:lcd|trest[3]                ; LcdController:lcd|trest[2]                ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.221      ;
+; 2.021 ; LcdController:lcd|trest[0]                ; LcdController:lcd|trest[1]                ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.242      ;
+; 2.043 ; SpiSlave:spi|ctl[1]                       ; LcdController:lcd|rs                      ; sck                       ; ClockGenerator:gen|divClk ; -0.500       ; 0.109      ; 1.873      ;
+; 2.053 ; SpiSlave:spi|data[5]                      ; LcdController:lcd|out_d[5]                ; sck                       ; ClockGenerator:gen|divClk ; -0.500       ; 0.109      ; 1.883      ;
+; 2.054 ; SpiSlave:spi|data[2]                      ; LcdController:lcd|out_d[2]                ; sck                       ; ClockGenerator:gen|divClk ; -0.500       ; 0.109      ; 1.884      ;
+; 2.054 ; SpiSlave:spi|data[0]                      ; LcdController:lcd|out_d[0]                ; sck                       ; ClockGenerator:gen|divClk ; -0.500       ; 0.109      ; 1.884      ;
+; 2.057 ; SpiSlave:spi|data[1]                      ; LcdController:lcd|out_d[1]                ; sck                       ; ClockGenerator:gen|divClk ; -0.500       ; 0.109      ; 1.887      ;
+; 2.064 ; SpiSlave:spi|data[4]                      ; LcdController:lcd|out_d[4]                ; sck                       ; ClockGenerator:gen|divClk ; -0.500       ; 0.109      ; 1.894      ;
+; 2.073 ; SpiSlave:spi|data[6]                      ; LcdController:lcd|out_d[6]                ; sck                       ; ClockGenerator:gen|divClk ; -0.500       ; 0.109      ; 1.903      ;
+; 2.084 ; SpiSlave:spi|data[7]                      ; LcdController:lcd|out_d[7]                ; sck                       ; ClockGenerator:gen|divClk ; -0.500       ; 0.109      ; 1.914      ;
+; 2.086 ; LcdController:lcd|prevState.sReadEnable   ; LcdController:lcd|dFlag                   ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.307      ;
+; 2.101 ; SpiSlave:spi|data[3]                      ; LcdController:lcd|out_d[3]                ; sck                       ; ClockGenerator:gen|divClk ; -0.500       ; 0.109      ; 1.931      ;
+; 2.106 ; SpiSlave:spi|ctl[0]                       ; LcdController:lcd|nextState.sReadSetup    ; sck                       ; ClockGenerator:gen|divClk ; -0.500       ; 0.109      ; 1.936      ;
+; 2.106 ; SpiSlave:spi|ctl[0]                       ; LcdController:lcd|rw                      ; sck                       ; ClockGenerator:gen|divClk ; -0.500       ; 0.109      ; 1.936      ;
+; 2.107 ; SpiSlave:spi|ctl[0]                       ; LcdController:lcd|nextState.sWriteSetup   ; sck                       ; ClockGenerator:gen|divClk ; -0.500       ; 0.109      ; 1.937      ;
+; 2.112 ; LcdController:lcd|nextState.sIdle         ; LcdController:lcd|prevState.sIdle         ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.333      ;
+; 2.151 ; LcdController:lcd|tpw[4]                  ; LcdController:lcd|tpw[3]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.372      ;
+; 2.151 ; LcdController:lcd|tsp1[1]                 ; LcdController:lcd|tsp1[0]                 ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.372      ;
+; 2.187 ; LcdController:lcd|trest[1]                ; LcdController:lcd|trest[2]                ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.408      ;
+; 2.190 ; LcdController:lcd|trest[1]                ; LcdController:lcd|trest[3]                ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.411      ;
+; 2.190 ; LcdController:lcd|trest[1]                ; LcdController:lcd|trest[0]                ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.411      ;
+; 2.217 ; LcdController:lcd|thd[2]                  ; LcdController:lcd|thd[1]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.438      ;
+; 2.223 ; LcdController:lcd|thd[2]                  ; LcdController:lcd|thd[0]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.444      ;
+; 2.228 ; LcdController:lcd|thd[2]                  ; LcdController:lcd|thd[3]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.449      ;
+; 2.237 ; LcdController:lcd|prevState.sReadSetup    ; LcdController:lcd|dFlag                   ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.458      ;
+; 2.247 ; LcdController:lcd|prevState.sIdle         ; LcdController:lcd|nextState.sIdle         ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.468      ;
+; 2.271 ; LcdController:lcd|prevState.sReadRelease  ; LcdController:lcd|nextState.sReadRelease  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.492      ;
+; 2.277 ; LcdController:lcd|prevState.sWriteRelease ; LcdController:lcd|nextState.sWriteRelease ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.498      ;
+; 2.311 ; LcdController:lcd|thd[0]                  ; LcdController:lcd|thd[0]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.532      ;
+; 2.313 ; LcdController:lcd|thd[0]                  ; LcdController:lcd|thd[2]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.534      ;
+; 2.315 ; LcdController:lcd|thd[0]                  ; LcdController:lcd|thd[3]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.536      ;
+; 2.315 ; LcdController:lcd|thd[0]                  ; LcdController:lcd|thd[1]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.536      ;
+; 2.334 ; LcdController:lcd|prevState.sWriteEnable  ; LcdController:lcd|e                       ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.555      ;
+; 2.335 ; LcdController:lcd|trest[0]                ; LcdController:lcd|trest[3]                ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.556      ;
+; 2.335 ; LcdController:lcd|trest[0]                ; LcdController:lcd|trest[0]                ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.556      ;
+; 2.340 ; LcdController:lcd|trest[0]                ; LcdController:lcd|trest[2]                ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.561      ;
+; 2.401 ; LcdController:lcd|tpw[2]                  ; LcdController:lcd|tpw[5]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.622      ;
+; 2.409 ; LcdController:lcd|tpw[2]                  ; LcdController:lcd|nextState.sReadDisable  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.630      ;
+; 2.414 ; LcdController:lcd|tpw[2]                  ; LcdController:lcd|nextState.sWriteEnable  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.635      ;
+; 2.416 ; LcdController:lcd|tpw[2]                  ; LcdController:lcd|nextState.sReadEnable   ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.637      ;
+; 2.417 ; LcdController:lcd|tpw[2]                  ; LcdController:lcd|nextState.sWriteDisable ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.638      ;
+; 2.569 ; LcdController:lcd|nextState.sWriteEnable  ; LcdController:lcd|prevState.sWriteEnable  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.790      ;
+; 2.612 ; LcdController:lcd|nextState.sReadDisable  ; LcdController:lcd|prevState.sReadDisable  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.833      ;
+; 2.655 ; LcdController:lcd|prevState.sReadEnable   ; LcdController:lcd|e                       ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.876      ;
+; 2.700 ; LcdController:lcd|nextState.sReadEnable   ; LcdController:lcd|prevState.sReadEnable   ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.921      ;
+; 2.713 ; LcdController:lcd|tsp1[3]                 ; LcdController:lcd|tsp1[0]                 ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.934      ;
+; 2.739 ; LcdController:lcd|tpw[2]                  ; LcdController:lcd|tpw[0]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 2.960      ;
+; 2.788 ; LcdController:lcd|nextState.sWriteDisable ; LcdController:lcd|prevState.sWriteDisable ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.009      ;
+; 2.818 ; LcdController:lcd|tsp1[4]                 ; LcdController:lcd|nextState.sWriteSetup   ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.039      ;
+; 2.820 ; LcdController:lcd|tsp1[4]                 ; LcdController:lcd|nextState.sReadSetup    ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.041      ;
+; 2.838 ; LcdController:lcd|prevState.sReadEnable   ; LcdController:lcd|nextState.sReadDisable  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.059      ;
+; 2.841 ; LcdController:lcd|prevState.sReadEnable   ; LcdController:lcd|nextState.sReadEnable   ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.062      ;
+; 2.869 ; LcdController:lcd|tsp1[2]                 ; LcdController:lcd|tsp1[0]                 ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.090      ;
+; 2.906 ; LcdController:lcd|tpw[4]                  ; LcdController:lcd|tpw[5]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.127      ;
+; 2.914 ; LcdController:lcd|tpw[4]                  ; LcdController:lcd|nextState.sReadDisable  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.135      ;
+; 2.919 ; LcdController:lcd|tpw[4]                  ; LcdController:lcd|nextState.sWriteEnable  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.140      ;
+; 2.921 ; LcdController:lcd|tpw[4]                  ; LcdController:lcd|nextState.sReadEnable   ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.142      ;
+; 2.922 ; LcdController:lcd|tpw[4]                  ; LcdController:lcd|nextState.sWriteDisable ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.143      ;
+; 2.942 ; LcdController:lcd|prevState.sWriteEnable  ; LcdController:lcd|nextState.sWriteEnable  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.163      ;
+; 2.962 ; LcdController:lcd|tsp1[4]                 ; LcdController:lcd|nextState.sWriteEnable  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.183      ;
+; 2.963 ; LcdController:lcd|nextState.sWriteSetup   ; LcdController:lcd|prevState.sWriteSetup   ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.184      ;
+; 2.963 ; LcdController:lcd|tsp1[4]                 ; LcdController:lcd|nextState.sReadEnable   ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.184      ;
+; 3.027 ; LcdController:lcd|tsp1[4]                 ; LcdController:lcd|tsp1[4]                 ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.248      ;
+; 3.040 ; LcdController:lcd|nextState.sReadSetup    ; LcdController:lcd|prevState.sReadSetup    ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.261      ;
+; 3.084 ; LcdController:lcd|prevState.sReadDisable  ; LcdController:lcd|dFlag                   ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.305      ;
+; 3.084 ; LcdController:lcd|tpw[6]                  ; LcdController:lcd|tpw[3]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.305      ;
+; 3.097 ; LcdController:lcd|prevState.sWriteDisable ; LcdController:lcd|nextState.sWriteRelease ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.318      ;
+; 3.118 ; LcdController:lcd|trest[2]                ; LcdController:lcd|nextState.sReadRelease  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.339      ;
+; 3.126 ; LcdController:lcd|trest[2]                ; LcdController:lcd|nextState.sWriteRelease ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.347      ;
+; 3.127 ; LcdController:lcd|trest[2]                ; LcdController:lcd|nextState.sIdle         ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.348      ;
+; 3.140 ; LcdController:lcd|tsp1[3]                 ; LcdController:lcd|tsp1[3]                 ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.361      ;
+; 3.179 ; LcdController:lcd|tpw[2]                  ; LcdController:lcd|tpw[6]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.400      ;
+; 3.189 ; LcdController:lcd|tpw[5]                  ; LcdController:lcd|tpw[3]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.410      ;
+; 3.212 ; LcdController:lcd|prevState.sWriteSetup   ; LcdController:lcd|out_d[1]                ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.433      ;
+; 3.213 ; LcdController:lcd|prevState.sWriteSetup   ; LcdController:lcd|out_d[5]                ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.434      ;
+; 3.214 ; LcdController:lcd|prevState.sWriteSetup   ; LcdController:lcd|out_d[0]                ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.435      ;
+; 3.216 ; LcdController:lcd|tsp1[0]                 ; LcdController:lcd|tsp1[0]                 ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.437      ;
+; 3.221 ; LcdController:lcd|prevState.sWriteSetup   ; LcdController:lcd|out_d[4]                ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.442      ;
+; 3.244 ; LcdController:lcd|tpw[4]                  ; LcdController:lcd|tpw[0]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.465      ;
+; 3.273 ; LcdController:lcd|prevState.sReadDisable  ; LcdController:lcd|nextState.sReadDisable  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.494      ;
+; 3.281 ; LcdController:lcd|tpw[1]                  ; LcdController:lcd|tpw[1]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.502      ;
+; 3.292 ; LcdController:lcd|prevState.sWriteDisable ; LcdController:lcd|thd[3]                  ; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 0.000        ; 0.000      ; 3.513      ;
++-------+-------------------------------------------+-------------------------------------------+---------------------------+---------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'sck'                                                                                                                                     ;
++-------+-------------------------------+----------------------+---------------------------+-------------+--------------+------------+------------+
+; Slack ; From Node                     ; To Node              ; Launch Clock              ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------+----------------------+---------------------------+-------------+--------------+------------+------------+
+; 1.659 ; SpiSlave:spi|j[1]             ; SpiSlave:spi|j[1]    ; sck                       ; sck         ; 0.000        ; 0.000      ; 1.880      ;
+; 1.940 ; SpiSlave:spi|j[0]             ; SpiSlave:spi|j[0]    ; sck                       ; sck         ; 0.000        ; 0.000      ; 2.161      ;
+; 1.951 ; SpiSlave:spi|i[0]             ; SpiSlave:spi|i[0]    ; sck                       ; sck         ; 0.000        ; 0.000      ; 2.172      ;
+; 1.955 ; SpiSlave:spi|i[3]             ; SpiSlave:spi|i[3]    ; sck                       ; sck         ; 0.000        ; 0.000      ; 2.176      ;
+; 1.968 ; SpiSlave:spi|i[2]             ; SpiSlave:spi|i[2]    ; sck                       ; sck         ; 0.000        ; 0.000      ; 2.189      ;
+; 2.042 ; SpiSlave:spi|j[0]             ; SpiSlave:spi|ctl[1]  ; sck                       ; sck         ; 0.000        ; 0.000      ; 2.263      ;
+; 2.131 ; SpiSlave:spi|j[1]             ; SpiSlave:spi|j[2]    ; sck                       ; sck         ; 0.000        ; 0.000      ; 2.352      ;
+; 2.168 ; SpiSlave:spi|data[3]          ; SpiSlave:spi|data[3] ; sck                       ; sck         ; 0.000        ; 0.000      ; 2.389      ;
+; 2.182 ; SpiSlave:spi|ctl[0]           ; SpiSlave:spi|ctl[0]  ; sck                       ; sck         ; 0.000        ; 0.000      ; 2.403      ;
+; 2.191 ; SpiSlave:spi|i[1]             ; SpiSlave:spi|i[1]    ; sck                       ; sck         ; 0.000        ; 0.000      ; 2.412      ;
+; 2.192 ; SpiSlave:spi|i[1]             ; SpiSlave:spi|i[3]    ; sck                       ; sck         ; 0.000        ; 0.000      ; 2.413      ;
+; 2.211 ; SpiSlave:spi|i[1]             ; SpiSlave:spi|i[2]    ; sck                       ; sck         ; 0.000        ; 0.000      ; 2.432      ;
+; 2.215 ; SpiSlave:spi|i[0]             ; SpiSlave:spi|data[3] ; sck                       ; sck         ; 0.000        ; 0.000      ; 2.436      ;
+; 2.216 ; SpiSlave:spi|i[0]             ; SpiSlave:spi|i[1]    ; sck                       ; sck         ; 0.000        ; 0.000      ; 2.437      ;
+; 2.216 ; SpiSlave:spi|i[0]             ; SpiSlave:spi|i[3]    ; sck                       ; sck         ; 0.000        ; 0.000      ; 2.437      ;
+; 2.241 ; SpiSlave:spi|data[4]          ; SpiSlave:spi|data[4] ; sck                       ; sck         ; 0.000        ; 0.000      ; 2.462      ;
+; 2.255 ; SpiSlave:spi|j[0]             ; SpiSlave:spi|j[1]    ; sck                       ; sck         ; 0.000        ; 0.000      ; 2.476      ;
+; 2.258 ; SpiSlave:spi|j[0]             ; SpiSlave:spi|j[2]    ; sck                       ; sck         ; 0.000        ; 0.000      ; 2.479      ;
+; 2.308 ; SpiSlave:spi|i[2]             ; SpiSlave:spi|i[3]    ; sck                       ; sck         ; 0.000        ; 0.000      ; 2.529      ;
+; 2.324 ; SpiSlave:spi|ctl[1]           ; SpiSlave:spi|ctl[1]  ; sck                       ; sck         ; 0.000        ; 0.000      ; 2.545      ;
+; 2.339 ; SpiSlave:spi|data[1]          ; SpiSlave:spi|data[1] ; sck                       ; sck         ; 0.000        ; 0.000      ; 2.560      ;
+; 2.372 ; SpiSlave:spi|data[7]          ; SpiSlave:spi|data[7] ; sck                       ; sck         ; 0.000        ; 0.000      ; 2.593      ;
+; 2.484 ; LcdController:lcd|ret_data[2] ; SpiSlave:spi|miso    ; ClockGenerator:gen|divClk ; sck         ; -0.500       ; -0.109     ; 2.096      ;
+; 2.514 ; SpiSlave:spi|data[2]          ; SpiSlave:spi|data[2] ; sck                       ; sck         ; 0.000        ; 0.000      ; 2.735      ;
+; 2.526 ; SpiSlave:spi|data[5]          ; SpiSlave:spi|data[5] ; sck                       ; sck         ; 0.000        ; 0.000      ; 2.747      ;
+; 2.581 ; SpiSlave:spi|data[6]          ; SpiSlave:spi|data[6] ; sck                       ; sck         ; 0.000        ; 0.000      ; 2.802      ;
+; 2.631 ; SpiSlave:spi|i[3]             ; SpiSlave:spi|miso    ; sck                       ; sck         ; 0.000        ; 0.000      ; 2.852      ;
+; 2.632 ; SpiSlave:spi|j[2]             ; SpiSlave:spi|j[2]    ; sck                       ; sck         ; 0.000        ; 0.000      ; 2.853      ;
+; 2.650 ; SpiSlave:spi|i[3]             ; SpiSlave:spi|j[0]    ; sck                       ; sck         ; 0.000        ; 0.000      ; 2.871      ;
+; 2.650 ; SpiSlave:spi|i[3]             ; SpiSlave:spi|j[1]    ; sck                       ; sck         ; 0.000        ; 0.000      ; 2.871      ;
+; 2.650 ; SpiSlave:spi|i[3]             ; SpiSlave:spi|j[2]    ; sck                       ; sck         ; 0.000        ; 0.000      ; 2.871      ;
+; 2.669 ; SpiSlave:spi|data[0]          ; SpiSlave:spi|data[0] ; sck                       ; sck         ; 0.000        ; 0.000      ; 2.890      ;
+; 2.783 ; SpiSlave:spi|i[0]             ; SpiSlave:spi|i[2]    ; sck                       ; sck         ; 0.000        ; 0.000      ; 3.004      ;
+; 2.846 ; SpiSlave:spi|i[2]             ; SpiSlave:spi|data[5] ; sck                       ; sck         ; 0.000        ; 0.000      ; 3.067      ;
+; 2.880 ; SpiSlave:spi|j[0]             ; SpiSlave:spi|ctl[0]  ; sck                       ; sck         ; 0.000        ; 0.000      ; 3.101      ;
+; 2.963 ; SpiSlave:spi|i[1]             ; SpiSlave:spi|data[3] ; sck                       ; sck         ; 0.000        ; 0.000      ; 3.184      ;
+; 2.966 ; LcdController:lcd|ret_data[6] ; SpiSlave:spi|miso    ; ClockGenerator:gen|divClk ; sck         ; -0.500       ; -0.109     ; 2.578      ;
+; 2.989 ; LcdController:lcd|ret_data[1] ; SpiSlave:spi|miso    ; ClockGenerator:gen|divClk ; sck         ; -0.500       ; -0.109     ; 2.601      ;
+; 3.100 ; SpiSlave:spi|i[0]             ; SpiSlave:spi|data[2] ; sck                       ; sck         ; 0.000        ; 0.000      ; 3.321      ;
+; 3.106 ; SpiSlave:spi|i[0]             ; SpiSlave:spi|data[6] ; sck                       ; sck         ; 0.000        ; 0.000      ; 3.327      ;
+; 3.273 ; SpiSlave:spi|i[2]             ; SpiSlave:spi|miso    ; sck                       ; sck         ; 0.000        ; 0.000      ; 3.494      ;
+; 3.290 ; SpiSlave:spi|i[2]             ; SpiSlave:spi|data[3] ; sck                       ; sck         ; 0.000        ; 0.000      ; 3.511      ;
+; 3.314 ; SpiSlave:spi|i[2]             ; SpiSlave:spi|data[4] ; sck                       ; sck         ; 0.000        ; 0.000      ; 3.535      ;
+; 3.314 ; SpiSlave:spi|i[0]             ; SpiSlave:spi|data[7] ; sck                       ; sck         ; 0.000        ; 0.000      ; 3.535      ;
+; 3.324 ; SpiSlave:spi|i[2]             ; SpiSlave:spi|data[0] ; sck                       ; sck         ; 0.000        ; 0.000      ; 3.545      ;
+; 3.326 ; SpiSlave:spi|i[2]             ; SpiSlave:spi|data[1] ; sck                       ; sck         ; 0.000        ; 0.000      ; 3.547      ;
+; 3.362 ; SpiSlave:spi|i[0]             ; SpiSlave:spi|data[0] ; sck                       ; sck         ; 0.000        ; 0.000      ; 3.583      ;
+; 3.364 ; SpiSlave:spi|i[0]             ; SpiSlave:spi|data[1] ; sck                       ; sck         ; 0.000        ; 0.000      ; 3.585      ;
+; 3.475 ; SpiSlave:spi|i[3]             ; SpiSlave:spi|data[3] ; sck                       ; sck         ; 0.000        ; 0.000      ; 3.696      ;
+; 3.479 ; SpiSlave:spi|i[0]             ; SpiSlave:spi|miso    ; sck                       ; sck         ; 0.000        ; 0.000      ; 3.700      ;
+; 3.510 ; LcdController:lcd|ret_data[0] ; SpiSlave:spi|miso    ; ClockGenerator:gen|divClk ; sck         ; -0.500       ; -0.109     ; 3.122      ;
+; 3.542 ; LcdController:lcd|ret_data[3] ; SpiSlave:spi|miso    ; ClockGenerator:gen|divClk ; sck         ; -0.500       ; -0.109     ; 3.154      ;
+; 3.568 ; SpiSlave:spi|j[2]             ; SpiSlave:spi|ctl[1]  ; sck                       ; sck         ; 0.000        ; 0.000      ; 3.789      ;
+; 3.603 ; SpiSlave:spi|i[1]             ; SpiSlave:spi|miso    ; sck                       ; sck         ; 0.000        ; 0.000      ; 3.824      ;
+; 3.695 ; SpiSlave:spi|i[1]             ; SpiSlave:spi|data[7] ; sck                       ; sck         ; 0.000        ; 0.000      ; 3.916      ;
+; 3.696 ; SpiSlave:spi|i[1]             ; SpiSlave:spi|data[6] ; sck                       ; sck         ; 0.000        ; 0.000      ; 3.917      ;
+; 3.707 ; SpiSlave:spi|i[1]             ; SpiSlave:spi|data[1] ; sck                       ; sck         ; 0.000        ; 0.000      ; 3.928      ;
+; 3.708 ; SpiSlave:spi|i[1]             ; SpiSlave:spi|data[0] ; sck                       ; sck         ; 0.000        ; 0.000      ; 3.929      ;
+; 3.732 ; SpiSlave:spi|i[3]             ; SpiSlave:spi|data[1] ; sck                       ; sck         ; 0.000        ; 0.000      ; 3.953      ;
+; 3.737 ; SpiSlave:spi|i[3]             ; SpiSlave:spi|data[0] ; sck                       ; sck         ; 0.000        ; 0.000      ; 3.958      ;
+; 3.748 ; SpiSlave:spi|i[1]             ; SpiSlave:spi|data[2] ; sck                       ; sck         ; 0.000        ; 0.000      ; 3.969      ;
+; 3.774 ; SpiSlave:spi|i[3]             ; SpiSlave:spi|ctl[1]  ; sck                       ; sck         ; 0.000        ; 0.000      ; 3.995      ;
+; 3.790 ; SpiSlave:spi|i[0]             ; SpiSlave:spi|data[4] ; sck                       ; sck         ; 0.000        ; 0.000      ; 4.011      ;
+; 3.894 ; LcdController:lcd|ret_data[5] ; SpiSlave:spi|miso    ; ClockGenerator:gen|divClk ; sck         ; -0.500       ; -0.109     ; 3.506      ;
+; 3.897 ; SpiSlave:spi|j[1]             ; SpiSlave:spi|ctl[1]  ; sck                       ; sck         ; 0.000        ; 0.000      ; 4.118      ;
+; 3.923 ; SpiSlave:spi|j[2]             ; SpiSlave:spi|ctl[0]  ; sck                       ; sck         ; 0.000        ; 0.000      ; 4.144      ;
+; 4.028 ; SpiSlave:spi|i[2]             ; SpiSlave:spi|data[7] ; sck                       ; sck         ; 0.000        ; 0.000      ; 4.249      ;
+; 4.029 ; SpiSlave:spi|i[2]             ; SpiSlave:spi|data[6] ; sck                       ; sck         ; 0.000        ; 0.000      ; 4.250      ;
+; 4.033 ; SpiSlave:spi|i[0]             ; SpiSlave:spi|data[5] ; sck                       ; sck         ; 0.000        ; 0.000      ; 4.254      ;
+; 4.075 ; SpiSlave:spi|i[2]             ; SpiSlave:spi|data[2] ; sck                       ; sck         ; 0.000        ; 0.000      ; 4.296      ;
+; 4.129 ; SpiSlave:spi|i[3]             ; SpiSlave:spi|ctl[0]  ; sck                       ; sck         ; 0.000        ; 0.000      ; 4.350      ;
+; 4.136 ; SpiSlave:spi|i[1]             ; SpiSlave:spi|data[4] ; sck                       ; sck         ; 0.000        ; 0.000      ; 4.357      ;
+; 4.165 ; SpiSlave:spi|i[3]             ; SpiSlave:spi|data[4] ; sck                       ; sck         ; 0.000        ; 0.000      ; 4.386      ;
+; 4.206 ; SpiSlave:spi|i[3]             ; SpiSlave:spi|data[7] ; sck                       ; sck         ; 0.000        ; 0.000      ; 4.427      ;
+; 4.207 ; SpiSlave:spi|i[3]             ; SpiSlave:spi|data[6] ; sck                       ; sck         ; 0.000        ; 0.000      ; 4.428      ;
+; 4.252 ; SpiSlave:spi|j[1]             ; SpiSlave:spi|ctl[0]  ; sck                       ; sck         ; 0.000        ; 0.000      ; 4.473      ;
+; 4.260 ; SpiSlave:spi|i[3]             ; SpiSlave:spi|data[2] ; sck                       ; sck         ; 0.000        ; 0.000      ; 4.481      ;
+; 4.376 ; SpiSlave:spi|i[1]             ; SpiSlave:spi|data[5] ; sck                       ; sck         ; 0.000        ; 0.000      ; 4.597      ;
+; 4.397 ; LcdController:lcd|ret_data[4] ; SpiSlave:spi|miso    ; ClockGenerator:gen|divClk ; sck         ; -0.500       ; -0.109     ; 4.009      ;
+; 4.401 ; SpiSlave:spi|i[3]             ; SpiSlave:spi|data[5] ; sck                       ; sck         ; 0.000        ; 0.000      ; 4.622      ;
+; 4.407 ; LcdController:lcd|ret_data[7] ; SpiSlave:spi|miso    ; ClockGenerator:gen|divClk ; sck         ; -0.500       ; -0.109     ; 4.019      ;
++-------+-------------------------------+----------------------+---------------------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'clk'                                                                                      ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                         ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------+
+; -2.289 ; 1.000        ; 3.289          ; Port Rate        ; clk   ; Rise       ; clk                            ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ClockGenerator:gen|clkCount[0] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ClockGenerator:gen|clkCount[0] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ClockGenerator:gen|clkCount[1] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ClockGenerator:gen|clkCount[1] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ClockGenerator:gen|clkCount[2] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ClockGenerator:gen|clkCount[2] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ClockGenerator:gen|clkCount[3] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ClockGenerator:gen|clkCount[3] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ClockGenerator:gen|clkCount[4] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ClockGenerator:gen|clkCount[4] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ClockGenerator:gen|clkCount[5] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ClockGenerator:gen|clkCount[5] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ClockGenerator:gen|clkCount[6] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ClockGenerator:gen|clkCount[6] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ClockGenerator:gen|clkCount[7] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ClockGenerator:gen|clkCount[7] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; ClockGenerator:gen|divClk      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; ClockGenerator:gen|divClk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|combout                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|combout                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; gen|clkCount[0]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; gen|clkCount[0]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; gen|clkCount[1]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; gen|clkCount[1]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; gen|clkCount[2]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; gen|clkCount[2]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; gen|clkCount[3]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; gen|clkCount[3]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; gen|clkCount[4]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; gen|clkCount[4]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; gen|clkCount[5]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; gen|clkCount[5]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; gen|clkCount[6]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; gen|clkCount[6]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; gen|clkCount[7]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; gen|clkCount[7]|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; gen|divClk|clk                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; gen|divClk|clk                 ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'sck'                                                                            ;
++--------+--------------+----------------+------------------+-------+------------+----------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target               ;
++--------+--------------+----------------+------------------+-------+------------+----------------------+
+; -2.289 ; 1.000        ; 3.289          ; Port Rate        ; sck   ; Rise       ; sck                  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sck   ; Fall       ; SpiSlave:spi|ctl[0]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sck   ; Fall       ; SpiSlave:spi|ctl[0]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sck   ; Fall       ; SpiSlave:spi|ctl[1]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sck   ; Fall       ; SpiSlave:spi|ctl[1]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sck   ; Fall       ; SpiSlave:spi|data[0] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sck   ; Fall       ; SpiSlave:spi|data[0] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sck   ; Fall       ; SpiSlave:spi|data[1] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sck   ; Fall       ; SpiSlave:spi|data[1] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sck   ; Fall       ; SpiSlave:spi|data[2] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sck   ; Fall       ; SpiSlave:spi|data[2] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sck   ; Fall       ; SpiSlave:spi|data[3] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sck   ; Fall       ; SpiSlave:spi|data[3] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sck   ; Fall       ; SpiSlave:spi|data[4] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sck   ; Fall       ; SpiSlave:spi|data[4] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sck   ; Fall       ; SpiSlave:spi|data[5] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sck   ; Fall       ; SpiSlave:spi|data[5] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sck   ; Fall       ; SpiSlave:spi|data[6] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sck   ; Fall       ; SpiSlave:spi|data[6] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sck   ; Fall       ; SpiSlave:spi|data[7] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sck   ; Fall       ; SpiSlave:spi|data[7] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sck   ; Fall       ; SpiSlave:spi|i[0]    ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sck   ; Fall       ; SpiSlave:spi|i[0]    ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sck   ; Fall       ; SpiSlave:spi|i[1]    ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sck   ; Fall       ; SpiSlave:spi|i[1]    ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sck   ; Fall       ; SpiSlave:spi|i[2]    ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sck   ; Fall       ; SpiSlave:spi|i[2]    ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sck   ; Fall       ; SpiSlave:spi|i[3]    ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sck   ; Fall       ; SpiSlave:spi|i[3]    ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sck   ; Fall       ; SpiSlave:spi|j[0]    ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sck   ; Fall       ; SpiSlave:spi|j[0]    ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sck   ; Fall       ; SpiSlave:spi|j[1]    ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sck   ; Fall       ; SpiSlave:spi|j[1]    ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sck   ; Fall       ; SpiSlave:spi|j[2]    ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sck   ; Fall       ; SpiSlave:spi|j[2]    ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; sck   ; Fall       ; SpiSlave:spi|miso    ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; sck   ; Fall       ; SpiSlave:spi|miso    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; sck   ; Rise       ; sck|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; sck   ; Rise       ; sck|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; sck   ; Rise       ; spi|ctl[0]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; sck   ; Rise       ; spi|ctl[0]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; sck   ; Rise       ; spi|ctl[1]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; sck   ; Rise       ; spi|ctl[1]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; sck   ; Rise       ; spi|data[0]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; sck   ; Rise       ; spi|data[0]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; sck   ; Rise       ; spi|data[1]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; sck   ; Rise       ; spi|data[1]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; sck   ; Rise       ; spi|data[2]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; sck   ; Rise       ; spi|data[2]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; sck   ; Rise       ; spi|data[3]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; sck   ; Rise       ; spi|data[3]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; sck   ; Rise       ; spi|data[4]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; sck   ; Rise       ; spi|data[4]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; sck   ; Rise       ; spi|data[5]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; sck   ; Rise       ; spi|data[5]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; sck   ; Rise       ; spi|data[6]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; sck   ; Rise       ; spi|data[6]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; sck   ; Rise       ; spi|data[7]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; sck   ; Rise       ; spi|data[7]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; sck   ; Rise       ; spi|i[0]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; sck   ; Rise       ; spi|i[0]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; sck   ; Rise       ; spi|i[1]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; sck   ; Rise       ; spi|i[1]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; sck   ; Rise       ; spi|i[2]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; sck   ; Rise       ; spi|i[2]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; sck   ; Rise       ; spi|i[3]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; sck   ; Rise       ; spi|i[3]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; sck   ; Rise       ; spi|j[0]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; sck   ; Rise       ; spi|j[0]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; sck   ; Rise       ; spi|j[1]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; sck   ; Rise       ; spi|j[1]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; sck   ; Rise       ; spi|j[2]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; sck   ; Rise       ; spi|j[2]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; sck   ; Rise       ; spi|miso|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; sck   ; Rise       ; spi|miso|clk         ;
++--------+--------------+----------------+------------------+-------+------------+----------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'ClockGenerator:gen|divClk'                                                                                              ;
++-------+--------------+----------------+------------------+---------------------------+------------+-------------------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock                     ; Clock Edge ; Target                                    ;
++-------+--------------+----------------+------------------+---------------------------+------------+-------------------------------------------+
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|dFlag                   ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|dFlag                   ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|e                       ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|e                       ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|nextState.sIdle         ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|nextState.sIdle         ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|nextState.sReadDisable  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|nextState.sReadDisable  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|nextState.sReadEnable   ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|nextState.sReadEnable   ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|nextState.sReadRelease  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|nextState.sReadRelease  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|nextState.sReadSetup    ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|nextState.sReadSetup    ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|nextState.sWriteDisable ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|nextState.sWriteDisable ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|nextState.sWriteEnable  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|nextState.sWriteEnable  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|nextState.sWriteRelease ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|nextState.sWriteRelease ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|nextState.sWriteSetup   ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|nextState.sWriteSetup   ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|out_d[0]                ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|out_d[0]                ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|out_d[1]                ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|out_d[1]                ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|out_d[2]                ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|out_d[2]                ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|out_d[3]                ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|out_d[3]                ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|out_d[4]                ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|out_d[4]                ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|out_d[5]                ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|out_d[5]                ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|out_d[6]                ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|out_d[6]                ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|out_d[7]                ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|out_d[7]                ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|prevState.sIdle         ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|prevState.sIdle         ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|prevState.sReadDisable  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|prevState.sReadDisable  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|prevState.sReadEnable   ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|prevState.sReadEnable   ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|prevState.sReadRelease  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|prevState.sReadRelease  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|prevState.sReadSetup    ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|prevState.sReadSetup    ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|prevState.sWriteDisable ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|prevState.sWriteDisable ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|prevState.sWriteEnable  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|prevState.sWriteEnable  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|prevState.sWriteRelease ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|prevState.sWriteRelease ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|prevState.sWriteSetup   ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|prevState.sWriteSetup   ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|ret_data[0]             ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|ret_data[0]             ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|ret_data[1]             ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|ret_data[1]             ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|ret_data[2]             ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|ret_data[2]             ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|ret_data[3]             ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|ret_data[3]             ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|ret_data[4]             ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|ret_data[4]             ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|ret_data[5]             ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|ret_data[5]             ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|ret_data[6]             ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|ret_data[6]             ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|ret_data[7]             ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|ret_data[7]             ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|rs                      ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|rs                      ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|rw                      ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|rw                      ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|thd[0]                  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|thd[0]                  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|thd[1]                  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|thd[1]                  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|thd[2]                  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|thd[2]                  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|thd[3]                  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|thd[3]                  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|tpw[0]                  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|tpw[0]                  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|tpw[1]                  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|tpw[1]                  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|tpw[2]                  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|tpw[2]                  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|tpw[3]                  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|tpw[3]                  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|tpw[4]                  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|tpw[4]                  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|tpw[5]                  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|tpw[5]                  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|tpw[6]                  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|tpw[6]                  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|tpw[7]                  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; ClockGenerator:gen|divClk ; Rise       ; LcdController:lcd|tpw[7]                  ;
++-------+--------------+----------------+------------------+---------------------------+------------+-------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                    ;
++-----------+---------------------------+-------+-------+------------+---------------------------+
+; Data Port ; Clock Port                ; Rise  ; Fall  ; Clock Edge ; Clock Reference           ;
++-----------+---------------------------+-------+-------+------------+---------------------------+
+; cs        ; ClockGenerator:gen|divClk ; 5.632 ; 5.632 ; Rise       ; ClockGenerator:gen|divClk ;
+; d[*]      ; ClockGenerator:gen|divClk ; 2.527 ; 2.527 ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[0]     ; ClockGenerator:gen|divClk ; 1.785 ; 1.785 ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[1]     ; ClockGenerator:gen|divClk ; 2.527 ; 2.527 ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[2]     ; ClockGenerator:gen|divClk ; 2.413 ; 2.413 ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[3]     ; ClockGenerator:gen|divClk ; 2.021 ; 2.021 ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[4]     ; ClockGenerator:gen|divClk ; 2.384 ; 2.384 ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[5]     ; ClockGenerator:gen|divClk ; 1.816 ; 1.816 ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[6]     ; ClockGenerator:gen|divClk ; 2.352 ; 2.352 ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[7]     ; ClockGenerator:gen|divClk ; 2.054 ; 2.054 ; Rise       ; ClockGenerator:gen|divClk ;
+; rst_n     ; ClockGenerator:gen|divClk ; 5.946 ; 5.946 ; Rise       ; ClockGenerator:gen|divClk ;
+; rst_n     ; clk                       ; 4.950 ; 4.950 ; Rise       ; clk                       ;
+; cs        ; sck                       ; 8.725 ; 8.725 ; Fall       ; sck                       ;
+; mosi      ; sck                       ; 3.494 ; 3.494 ; Fall       ; sck                       ;
+; rst_n     ; sck                       ; 9.361 ; 9.361 ; Fall       ; sck                       ;
++-----------+---------------------------+-------+-------+------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                       ;
++-----------+---------------------------+--------+--------+------------+---------------------------+
+; Data Port ; Clock Port                ; Rise   ; Fall   ; Clock Edge ; Clock Reference           ;
++-----------+---------------------------+--------+--------+------------+---------------------------+
+; cs        ; ClockGenerator:gen|divClk ; -1.797 ; -1.797 ; Rise       ; ClockGenerator:gen|divClk ;
+; d[*]      ; ClockGenerator:gen|divClk ; -1.231 ; -1.231 ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[0]     ; ClockGenerator:gen|divClk ; -1.231 ; -1.231 ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[1]     ; ClockGenerator:gen|divClk ; -1.973 ; -1.973 ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[2]     ; ClockGenerator:gen|divClk ; -1.859 ; -1.859 ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[3]     ; ClockGenerator:gen|divClk ; -1.467 ; -1.467 ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[4]     ; ClockGenerator:gen|divClk ; -1.830 ; -1.830 ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[5]     ; ClockGenerator:gen|divClk ; -1.262 ; -1.262 ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[6]     ; ClockGenerator:gen|divClk ; -1.798 ; -1.798 ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[7]     ; ClockGenerator:gen|divClk ; -1.500 ; -1.500 ; Rise       ; ClockGenerator:gen|divClk ;
+; rst_n     ; ClockGenerator:gen|divClk ; -1.489 ; -1.489 ; Rise       ; ClockGenerator:gen|divClk ;
+; rst_n     ; clk                       ; -3.962 ; -3.962 ; Rise       ; clk                       ;
+; cs        ; sck                       ; -6.025 ; -6.025 ; Fall       ; sck                       ;
+; mosi      ; sck                       ; -2.359 ; -2.359 ; Fall       ; sck                       ;
+; rst_n     ; sck                       ; -6.661 ; -6.661 ; Fall       ; sck                       ;
++-----------+---------------------------+--------+--------+------------+---------------------------+
+
+
++------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                          ;
++-----------+---------------------------+-------+-------+------------+---------------------------+
+; Data Port ; Clock Port                ; Rise  ; Fall  ; Clock Edge ; Clock Reference           ;
++-----------+---------------------------+-------+-------+------------+---------------------------+
+; d[*]      ; ClockGenerator:gen|divClk ; 8.900 ; 8.900 ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[0]     ; ClockGenerator:gen|divClk ; 7.256 ; 7.256 ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[1]     ; ClockGenerator:gen|divClk ; 7.262 ; 7.262 ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[2]     ; ClockGenerator:gen|divClk ; 8.440 ; 8.440 ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[3]     ; ClockGenerator:gen|divClk ; 8.584 ; 8.584 ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[4]     ; ClockGenerator:gen|divClk ; 8.900 ; 8.900 ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[5]     ; ClockGenerator:gen|divClk ; 8.345 ; 8.345 ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[6]     ; ClockGenerator:gen|divClk ; 8.440 ; 8.440 ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[7]     ; ClockGenerator:gen|divClk ; 8.440 ; 8.440 ; Rise       ; ClockGenerator:gen|divClk ;
+; e         ; ClockGenerator:gen|divClk ; 7.262 ; 7.262 ; Rise       ; ClockGenerator:gen|divClk ;
+; rs        ; ClockGenerator:gen|divClk ; 8.441 ; 8.441 ; Rise       ; ClockGenerator:gen|divClk ;
+; rw        ; ClockGenerator:gen|divClk ; 8.500 ; 8.500 ; Rise       ; ClockGenerator:gen|divClk ;
+; miso      ; sck                       ; 8.393 ; 8.393 ; Fall       ; sck                       ;
++-----------+---------------------------+-------+-------+------------+---------------------------+
+
+
++------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                  ;
++-----------+---------------------------+-------+-------+------------+---------------------------+
+; Data Port ; Clock Port                ; Rise  ; Fall  ; Clock Edge ; Clock Reference           ;
++-----------+---------------------------+-------+-------+------------+---------------------------+
+; d[*]      ; ClockGenerator:gen|divClk ; 7.256 ; 7.256 ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[0]     ; ClockGenerator:gen|divClk ; 7.256 ; 7.256 ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[1]     ; ClockGenerator:gen|divClk ; 7.262 ; 7.262 ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[2]     ; ClockGenerator:gen|divClk ; 8.440 ; 8.440 ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[3]     ; ClockGenerator:gen|divClk ; 8.584 ; 8.584 ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[4]     ; ClockGenerator:gen|divClk ; 8.900 ; 8.900 ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[5]     ; ClockGenerator:gen|divClk ; 8.345 ; 8.345 ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[6]     ; ClockGenerator:gen|divClk ; 8.440 ; 8.440 ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[7]     ; ClockGenerator:gen|divClk ; 8.440 ; 8.440 ; Rise       ; ClockGenerator:gen|divClk ;
+; e         ; ClockGenerator:gen|divClk ; 7.262 ; 7.262 ; Rise       ; ClockGenerator:gen|divClk ;
+; rs        ; ClockGenerator:gen|divClk ; 8.441 ; 8.441 ; Rise       ; ClockGenerator:gen|divClk ;
+; rw        ; ClockGenerator:gen|divClk ; 8.500 ; 8.500 ; Rise       ; ClockGenerator:gen|divClk ;
+; miso      ; sck                       ; 8.393 ; 8.393 ; Fall       ; sck                       ;
++-----------+---------------------------+-------+-------+------------+---------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Output Enable Times                                                                           ;
++-----------+---------------------------+-------+------+------------+---------------------------+
+; Data Port ; Clock Port                ; Rise  ; Fall ; Clock Edge ; Clock Reference           ;
++-----------+---------------------------+-------+------+------------+---------------------------+
+; d[*]      ; ClockGenerator:gen|divClk ; 7.225 ;      ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[0]     ; ClockGenerator:gen|divClk ; 7.921 ;      ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[1]     ; ClockGenerator:gen|divClk ; 7.921 ;      ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[2]     ; ClockGenerator:gen|divClk ; 7.225 ;      ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[3]     ; ClockGenerator:gen|divClk ; 7.925 ;      ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[4]     ; ClockGenerator:gen|divClk ; 7.225 ;      ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[5]     ; ClockGenerator:gen|divClk ; 7.921 ;      ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[6]     ; ClockGenerator:gen|divClk ; 7.225 ;      ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[7]     ; ClockGenerator:gen|divClk ; 7.225 ;      ; Rise       ; ClockGenerator:gen|divClk ;
++-----------+---------------------------+-------+------+------------+---------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Minimum Output Enable Times                                                                   ;
++-----------+---------------------------+-------+------+------------+---------------------------+
+; Data Port ; Clock Port                ; Rise  ; Fall ; Clock Edge ; Clock Reference           ;
++-----------+---------------------------+-------+------+------------+---------------------------+
+; d[*]      ; ClockGenerator:gen|divClk ; 7.225 ;      ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[0]     ; ClockGenerator:gen|divClk ; 7.921 ;      ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[1]     ; ClockGenerator:gen|divClk ; 7.921 ;      ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[2]     ; ClockGenerator:gen|divClk ; 7.225 ;      ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[3]     ; ClockGenerator:gen|divClk ; 7.925 ;      ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[4]     ; ClockGenerator:gen|divClk ; 7.225 ;      ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[5]     ; ClockGenerator:gen|divClk ; 7.921 ;      ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[6]     ; ClockGenerator:gen|divClk ; 7.225 ;      ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[7]     ; ClockGenerator:gen|divClk ; 7.225 ;      ; Rise       ; ClockGenerator:gen|divClk ;
++-----------+---------------------------+-------+------+------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Output Disable Times                                                                                   ;
++-----------+---------------------------+-----------+-----------+------------+---------------------------+
+; Data Port ; Clock Port                ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference           ;
++-----------+---------------------------+-----------+-----------+------------+---------------------------+
+; d[*]      ; ClockGenerator:gen|divClk ; 7.225     ;           ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[0]     ; ClockGenerator:gen|divClk ; 7.921     ;           ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[1]     ; ClockGenerator:gen|divClk ; 7.921     ;           ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[2]     ; ClockGenerator:gen|divClk ; 7.225     ;           ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[3]     ; ClockGenerator:gen|divClk ; 7.925     ;           ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[4]     ; ClockGenerator:gen|divClk ; 7.225     ;           ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[5]     ; ClockGenerator:gen|divClk ; 7.921     ;           ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[6]     ; ClockGenerator:gen|divClk ; 7.225     ;           ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[7]     ; ClockGenerator:gen|divClk ; 7.225     ;           ; Rise       ; ClockGenerator:gen|divClk ;
++-----------+---------------------------+-----------+-----------+------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Minimum Output Disable Times                                                                           ;
++-----------+---------------------------+-----------+-----------+------------+---------------------------+
+; Data Port ; Clock Port                ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference           ;
++-----------+---------------------------+-----------+-----------+------------+---------------------------+
+; d[*]      ; ClockGenerator:gen|divClk ; 7.225     ;           ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[0]     ; ClockGenerator:gen|divClk ; 7.921     ;           ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[1]     ; ClockGenerator:gen|divClk ; 7.921     ;           ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[2]     ; ClockGenerator:gen|divClk ; 7.225     ;           ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[3]     ; ClockGenerator:gen|divClk ; 7.925     ;           ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[4]     ; ClockGenerator:gen|divClk ; 7.225     ;           ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[5]     ; ClockGenerator:gen|divClk ; 7.921     ;           ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[6]     ; ClockGenerator:gen|divClk ; 7.225     ;           ; Rise       ; ClockGenerator:gen|divClk ;
+;  d[7]     ; ClockGenerator:gen|divClk ; 7.225     ;           ; Rise       ; ClockGenerator:gen|divClk ;
++-----------+---------------------------+-----------+-----------+------------+---------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                   ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+; From Clock                ; To Clock                  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+; clk                       ; clk                       ; 133      ; 0        ; 0        ; 0        ;
+; ClockGenerator:gen|divClk ; clk                       ; 1        ; 1        ; 0        ; 0        ;
+; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 345      ; 0        ; 0        ; 0        ;
+; sck                       ; ClockGenerator:gen|divClk ; 0        ; 12       ; 0        ; 0        ;
+; ClockGenerator:gen|divClk ; sck                       ; 0        ; 0        ; 8        ; 0        ;
+; sck                       ; sck                       ; 0        ; 0        ; 0        ; 77       ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                    ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+; From Clock                ; To Clock                  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+; clk                       ; clk                       ; 133      ; 0        ; 0        ; 0        ;
+; ClockGenerator:gen|divClk ; clk                       ; 1        ; 1        ; 0        ; 0        ;
+; ClockGenerator:gen|divClk ; ClockGenerator:gen|divClk ; 345      ; 0        ; 0        ; 0        ;
+; sck                       ; ClockGenerator:gen|divClk ; 0        ; 12       ; 0        ; 0        ;
+; ClockGenerator:gen|divClk ; sck                       ; 0        ; 0        ; 8        ; 0        ;
+; sck                       ; sck                       ; 0        ; 0        ; 0        ; 77       ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 11    ; 11   ;
+; Unconstrained Input Port Paths  ; 125   ; 125  ;
+; Unconstrained Output Ports      ; 12    ; 12   ;
+; Unconstrained Output Port Paths ; 20    ; 20   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 12.1 Build 243 01/31/2013 Service Pack 1.33 SJ Full Version
+    Info: Processing started: Sun Mar 08 22:38:56 2015
+Info: Command: quartus_sta LcdBridge -c LcdBridge
+Info: qsta_default_script.tcl version: #1
+Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (306004): Started post-fitting delay annotation
+Info (306005): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'LcdBridge.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name ClockGenerator:gen|divClk ClockGenerator:gen|divClk
+    Info (332105): create_clock -period 1.000 -name sck sck
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -6.941
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -6.941       -62.159 clk 
+    Info (332119):    -5.610      -215.118 ClockGenerator:gen|divClk 
+    Info (332119):    -4.563       -54.521 sck 
+Info (332146): Worst-case hold slack is -1.950
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.950        -1.950 clk 
+    Info (332119):     1.646         0.000 ClockGenerator:gen|divClk 
+    Info (332119):     1.659         0.000 sck 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.289        -2.289 clk 
+    Info (332119):    -2.289        -2.289 sck 
+    Info (332119):     0.234         0.000 ClockGenerator:gen|divClk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 407 megabytes
+    Info: Processing ended: Sun Mar 08 22:38:57 2015
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

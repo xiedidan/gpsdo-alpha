@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=NetPm31_1 Pin=Rm3-1
+Removed Pin From Net: NetName=GND Pin=Rm3-2
+Removed Member From Class: ClassName=GPSDO Member=Rm3
+Added Component: Designator=Pgnd(HDR1X2)
+Added Pin To Net: NetName=NetPm31_1 Pin=Pgnd-1
+Added Pin To Net: NetName=GND Pin=Pgnd-2
+Change Net Name : Old Net Name=NetPm31_1 New Net Name=NetPgnd_1
+Added Member To Class: ClassName=GPSDO Member=Component Pgnd Header 2

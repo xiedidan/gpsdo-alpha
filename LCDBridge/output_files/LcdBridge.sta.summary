@@ -1,0 +1,41 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'clk'
+Slack : -6.941
+TNS   : -62.159
+
+Type  : Setup 'ClockGenerator:gen|divClk'
+Slack : -5.610
+TNS   : -215.118
+
+Type  : Setup 'sck'
+Slack : -4.563
+TNS   : -54.521
+
+Type  : Hold 'clk'
+Slack : -1.950
+TNS   : -1.950
+
+Type  : Hold 'ClockGenerator:gen|divClk'
+Slack : 1.646
+TNS   : 0.000
+
+Type  : Hold 'sck'
+Slack : 1.659
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clk'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'sck'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'ClockGenerator:gen|divClk'
+Slack : 0.234
+TNS   : 0.000
+
+------------------------------------------------------------

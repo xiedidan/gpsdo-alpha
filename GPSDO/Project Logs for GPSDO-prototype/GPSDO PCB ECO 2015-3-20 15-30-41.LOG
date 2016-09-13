@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=SPI2_CS Pin=Ucpld-1
+Removed Pin From Net: NetName=SPI2_MOSI Pin=Ucpld-2
+Removed Pin From Net: NetName=SPI2_MISO Pin=Ucpld-3
+Removed Pin From Net: NetName=SPI2_SCK Pin=Ucpld-4
+Removed Pin From Net: NetName=RST_N Pin=Ucpld-5
+Removed Pin From Net: NetName=READY Pin=Ucpld-6
+Added Pin To Net: NetName=READY Pin=Ucpld-1
+Added Pin To Net: NetName=RST_N Pin=Ucpld-2
+Added Pin To Net: NetName=SPI2_SCK Pin=Ucpld-3
+Added Pin To Net: NetName=SPI2_MISO Pin=Ucpld-4
+Added Pin To Net: NetName=SPI2_MOSI Pin=Ucpld-5
+Added Pin To Net: NetName=SPI2_CS Pin=Ucpld-6

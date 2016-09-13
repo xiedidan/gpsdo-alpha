@@ -1,0 +1,7 @@
+Added Component: Designator=Jinput(SMA)
+Added Pin To Net: NetName=GND Pin=Jinput-1
+Added Pin To Net: NetName=GND Pin=Jinput-2
+Added Pin To Net: NetName=GND Pin=Jinput-3
+Added Pin To Net: NetName=GND Pin=Jinput-4
+Added Pin To Net: NetName=OCXORF Pin=Jinput-5
+Added Member To Class: ClassName=GPSDO Member=Component Jinput SMA

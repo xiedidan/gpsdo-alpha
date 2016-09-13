@@ -1,0 +1,4 @@
+Added Component: Designator=Cublox(RAD-0.3)
+Added Pin To Net: NetName=GND Pin=Cublox-1
+Added Pin To Net: NetName=VCC3V3 Pin=Cublox-2
+Added Member To Class: ClassName=GPSDO Member=Component Cublox Cap

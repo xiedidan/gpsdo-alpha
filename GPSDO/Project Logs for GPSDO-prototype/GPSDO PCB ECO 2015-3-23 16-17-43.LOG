@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=GND Pin=Rcpld1-2
+Removed Pin From Net: NetName=VCC3V3 Pin=Rcpld2-2
+Removed Member From Class: ClassName=GPSDO Member=Rcpld1
+Removed Member From Class: ClassName=GPSDO Member=Rcpld2

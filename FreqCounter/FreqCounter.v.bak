@@ -1,0 +1,64 @@
+module FreqCounter(rst_n, clk, ref, ready, ack, sck, cs, miso));
+endmodule
+
+// Counter
+module Counter(rst_n, clk, clr, sum);
+
+input rst_n, clk, clr;
+output [31:0] sum;
+reg lastClr;
+
+always @(posedge rst_n)
+begin
+	sum <= 32'b0;
+	lastClr <= 1'b0;
+end
+
+always @(posedge clk)
+begin
+	if (rst_n)
+		if (clr && lastClr == ~clr)
+		begin // posedge clr
+			sum <= 32'b0;
+			lastClr <= clr;
+		end
+		else
+		begin
+			sum <= sum + 32'b1;
+			lastClr <= clr;
+		end
+		begin
+	else
+	begin
+		sum <= 32'b0;
+		lastClr <= 1'b0;
+	end
+end
+
+endmodule
+
+// DFF
+module DFF(rst_n, en, d, q);
+
+input rst_n, en;
+input [31:0] d;
+output [31:0] q;
+
+always @(posedge rst_n)
+begin
+	q <= 32'b0;
+end
+
+always @(posedge en)
+begin
+	if (rst_n)
+		q <= d;
+	else
+		q <= 32'b0;
+end
+
+endmodule
+
+// SPI Slave
+module SpiSlave(rst_n, sum, ready, ack, cs, miso);
+endmodule

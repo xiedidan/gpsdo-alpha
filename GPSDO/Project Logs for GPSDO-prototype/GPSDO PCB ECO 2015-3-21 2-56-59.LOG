@@ -1,0 +1,8 @@
+Added Component: Designator=Cdecap1(RB7.6-15)
+Added Component: Designator=Cdecap2(RB7.6-15)
+Added Pin To Net: NetName=VCC3V3 Pin=Cdecap1-1
+Added Pin To Net: NetName=GND Pin=Cdecap1-2
+Added Pin To Net: NetName=VCC3V3 Pin=Cdecap2-1
+Added Pin To Net: NetName=GND Pin=Cdecap2-2
+Added Member To Class: ClassName=GPSDO Member=Component Cdecap1 Cap Pol1
+Added Member To Class: ClassName=GPSDO Member=Component Cdecap2 Cap Pol1

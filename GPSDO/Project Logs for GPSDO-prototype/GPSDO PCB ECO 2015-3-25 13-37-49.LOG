@@ -1,0 +1,11 @@
+Removed Pin From Net: NetName=AMPRF Pin=Rinvert-1
+Removed Pin From Net: NetName=CLK Pin=Rinvert-2
+Removed Pin From Net: NetName=AMPRF Pin=Uinvert-1
+Removed Pin From Net: NetName=CLK Pin=Uinvert-2
+Removed Pin From Net: NetName=GND Pin=Uinvert-9
+Removed Pin From Net: NetName=GND Pin=Uinvert-11
+Added Pin To Net: NetName=CLK Pin=Rinvert-1
+Added Pin To Net: NetName=AMPRF Pin=Rinvert-2
+Added Pin To Net: NetName=GND Pin=Uinvert-1
+Added Pin To Net: NetName=CLK Pin=Uinvert-8
+Added Pin To Net: NetName=AMPRF Pin=Uinvert-9
