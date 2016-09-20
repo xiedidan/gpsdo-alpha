@@ -12,8 +12,10 @@ int counterInterval = 10;
 void setup()
 {
   Serial.begin(115200);
+  
   initFreqReader();
-  Serial.println("FreqCounterController");
+  // TODO : init GSIP
+  // TODO : init PID
 }
 
 int i = 0;
@@ -21,6 +23,7 @@ unsigned long sum = 0;
 
 void loop()
 {
+  /*
   if (i < counterInterval)
   {
     sum += freq;
@@ -41,8 +44,9 @@ void loop()
     sum = 0;
     i = 0;
   }
+  */
   
-  delay(1000);
+  
 }
 
 // #define LCD_TEST
