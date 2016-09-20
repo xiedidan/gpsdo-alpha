@@ -28,6 +28,8 @@
  *  12 - Write moving average filter window length
  *  13 - Read moving average filter switch
  *  14 - Write moving average filter switch
+ *  15 - Read PID switch
+ *  16 - Write PID switch
  *  TYPE DATA:
  *  00 - Firmware version
  *  01 - Freq
@@ -40,6 +42,8 @@
  *  08 - D
  *  09 - Moving average filter window length
  *  0A - Moving average filter switch
+ *  0B - PID switch
+ *  0C - Debug info
  */
  /* PAYLOAD - changes with operation
   *  TYPE CMD:
@@ -53,6 +57,7 @@
   *  10 - Float, 32bit
   *  12 - Integer, 16bit
   *  14 - Integer, 8bit (only LSB is valid)
+  *  16 - Integer, 8bit (only LSB is valid)
   *  TYPE DATA:
   *  00 - String, 'GPSDO-Alpha Ver. [x.y.z]'
   *  01 - Integer, 32bit, Hz
@@ -65,7 +70,76 @@
   *  08 - Float, 32bit
   *  09 - Integer, 16bit
   *  0A - Integer, 8bit (only LSB is valid)
+  *  0B - Integer, 8bit (only LSB is valid)
+  *  0C - String
   */
   // CRC7 - Check sum of the former data of the message
+
+typedef enum _GSIP_TYPE {
+  Cmd = 0,
+  Data
+} GSIP_TYPE;
+
+typedef enum _GSIP_OPERATION {
+  ReadVersion = 0,
+  ReadFreq,
+  WriteFreq,
+  ReadCounter,
+  WriteDAC,
+  ReadLowestFreq,
+  WriteLowestFreq,
+  ReadHighestFreq,
+  WriteHighestFreq,
+  ReadCenterFreq,
+  WrtieCenterFreq,
+  ReadP,
+  WriteP,
+  ReadI,
+  WriteI,
+  ReadD,
+  WriteD,
+  ReadFilterWindow,
+  WriteFilterWindow,
+  ReadFilterSwitch,
+  WriteFilterSwitch,
+  ReadPIDSwitch,
+  WritePIDSwitch,
+  Version = 0,
+  Freq,
+  Counter,
+  LowestFreq,
+  HighestFreq,
+  CenterFreq,
+  P,
+  I,
+  D,
+  FilterWindow,
+  FilterSwitch,
+  PIDSwitch,
+  DebugInfo
+} GSIP_OPERATION;
+
+union GSIP_PAYLOAD {
+  unsigned long l;
+  float f;
+  unsigned int i;
+  unsigned short s;
+  char* str;
+}
+
+typedef struct _GSIP_MSG {
+  GSIP_TYPE type,
+  GSIP_OPERATION operation,
+  GSIP_PAYLOAD payload,
+  short crc7
+} GSIP_MSG;
+
+void initGSIP();
+void readMsg();
+void writeMsg();
+
+// helper
+void execCmd(void* error, void* param);
+short calcCRC7(unsigned char* msg);
 
 #endif

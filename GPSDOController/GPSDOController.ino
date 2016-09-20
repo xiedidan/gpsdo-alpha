@@ -5,48 +5,24 @@
 #include "freqWriter.h"
 #include "pid.h"
 #include "lcd1602.h"
-
-// must be power of 10
-int counterInterval = 10;
+#include "serialListener.h"
+#include "eventLoop.h"
 
 void setup()
 {
   Serial.begin(115200);
+  initSerialListener();
   
   initFreqReader();
-  // TODO : init GSIP
-  // TODO : init PID
+  initGSIP();
+  // TODO : init PID and go into automatic mode
 }
-
-int i = 0;
-unsigned long sum = 0;
 
 void loop()
 {
-  /*
-  if (i < counterInterval)
-  {
-    sum += freq;
-    i++;
-  }
-  else
-  {
-    unsigned long center = sum / counterInterval;
-    unsigned long centerSum = center * counterInterval;
-    unsigned long diffSum = sum - centerSum;
-    
-    Serial.print("Freq: ");
-    Serial.print(center);
-    Serial.print(".");
-    Serial.print(diffSum);
-    Serial.println("Hz");
-    
-    sum = 0;
-    i = 0;
-  }
-  */
+  readMsg();
   
-  
+  processEvent();
 }
 
 // #define LCD_TEST
