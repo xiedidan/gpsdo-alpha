@@ -4,7 +4,7 @@
 // GSIP - GPSDO Serail Interface Protocol
 // message format - HEADER|TYPE|OPERATION|PAYLOAD|CRC7
 // HEADER - 32bit Hex Number 55AA55AA
-// TYPE - 'CMD' / 'DATA'
+// TYPE - CMD = 0 / DATA = 1, 8bit integer
 /* OPERATION - 8bit Hex Number
  *  TYPE CMD:
  *  00 - Read firmware version
