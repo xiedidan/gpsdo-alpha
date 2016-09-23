@@ -5,13 +5,12 @@
 #include "freqWriter.h"
 #include "pid.h"
 #include "lcd1602.h"
-#include "serialListener.h"
 #include "eventLoop.h"
+#include "protocol.h"
 
 void setup()
 {
   Serial.begin(115200);
-  initSerialListener();
   
   initFreqReader();
   initGSIP();
@@ -20,8 +19,8 @@ void setup()
 
 void loop()
 {
-  readMsg();
-  
+  getMsg();
+
   processEvent();
 }
 

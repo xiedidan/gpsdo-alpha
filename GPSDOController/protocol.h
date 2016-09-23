@@ -125,21 +125,22 @@ union GSIP_PAYLOAD {
   unsigned int i;
   unsigned short s;
   char* str;
-}
+};
 
 typedef struct _GSIP_MSG {
-  GSIP_TYPE type,
-  GSIP_OPERATION operation,
-  GSIP_PAYLOAD payload,
-  short crc7
+  GSIP_TYPE type;
+  GSIP_OPERATION operation;
+  GSIP_PAYLOAD payload;
+  unsigned short crc7;
 } GSIP_MSG;
 
 void initGSIP();
-void readMsg();
+void getMsg();
 void writeMsg();
 
 // helper
 void execCmd(void* error, void* param);
 short calcCRC7(unsigned char* msg);
+void resetState();
 
 #endif
