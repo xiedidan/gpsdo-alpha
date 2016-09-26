@@ -36,9 +36,11 @@ void resetState() {
 void initGSIP() {
   resetState();
   on("cmd", (EventCallback)execCmd);
+  on("writeMsg", (EventCallback)writeMsg);
 }
 
 void getMsg() {
+  GSIP_MSG* msg;
   unsigned char next = 0;
   // TODO : find cmd from serial buffer with FSM
   while (Serial.available()) {
@@ -129,11 +131,11 @@ void getMsg() {
       case GSIP_READ_CRC:
         crc = next;
         
-        // TODO : create msg and trigger
-        GSIP_MSG* msg = (GSIP_MSG*)malloc(sizeof(GSIP_MSG));
+        // create msg and trigger
+        msg = (GSIP_MSG*)malloc(sizeof(GSIP_MSG));
         msg->type = type;
         msg->operation = operation;
-        // TODO : deal with payload
+        memcpy((void*)&(payload.l), payloadBuf, 4);
         msg->crc7 = crc;
         trigger("cmd", NULL, (void*)msg);
         
@@ -148,7 +150,7 @@ void getMsg() {
   }
 }
 
-void writeMsg(GSIP_TYPE type, GSIP_OPERATION operation, GSIP_PAYLOAD payload) {
+void createMsg(GSIP_TYPE type, GSIP_OPERATION operation, GSIP_PAYLOAD payload) {
   // TODO : create msg buffer
   // TODO : create crc7
   // TODO : write to serial
@@ -171,5 +173,7 @@ void execCmd(void* error, void* param) {
       break;
     }
   }
+
+  free(msg);
 }
 
