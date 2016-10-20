@@ -42,7 +42,7 @@ void initGSIP() {
 void getMsg() {
   GSIP_MSG* msg;
   unsigned char next = 0;
-  // TODO : find cmd from serial buffer with FSM
+  // find cmd from serial buffer with FSM
   while (Serial.available()) {
     next = Serial.read();
     
@@ -150,11 +150,28 @@ void getMsg() {
   }
 }
 
-void createMsg(GSIP_TYPE type, GSIP_OPERATION operation, GSIP_PAYLOAD payload) {
+
+void writeMsgImpl(GSIP_TYPE type, GSIP_OPERATION operation, GSIP_PAYLOAD payload) {
+  // for arduoni, we'll only send data
+  
+  int len = 7 + payload; // header 4 + type 1 + operation 1 + payload n + crc 1
   // TODO : create msg buffer
+  
+  
   // TODO : create crc7
   // TODO : write to serial
 }
+
+void writeMsg(void* error, void* param) {
+  GSIP_MSG* msg = (GSIP_MSG*)param;
+  
+  if (error == NULL && msg != NULL) {
+    writeMsgImpl(msg->type, msg->operation, msg->payload);
+  }
+
+  // TODO : free error and param
+}
+
 
 void execCmd(void* error, void* param) {
   GSIP_MSG* msg = (GSIP_MSG*)param;
