@@ -140,7 +140,7 @@ void writeMsg();
 
 // helper
 void execCmd(void* error, void* param);
-short calcCRC7(unsigned char* msg);
+unsigned short calcCRC7(unsigned char* src, int length);
 void resetState();
 
 #endif

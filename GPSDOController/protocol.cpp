@@ -194,3 +194,39 @@ void execCmd(void* error, void* param) {
   free(msg);
 }
 
+unsigned short calcCRC7(unsigned char* src, int length) {
+  unsigned short crc7 = src[0];
+  unsigned short pn = 0x89; // polynominal = x^7 + x^3 + 1
+  
+  int bitCount = 1;
+  int byteCount = 1;
+  
+  unsigned short nextByte = 0;
+  if (length != 1)
+    unsigned nextByte = src[byteCount];
+  
+  while (bitCount < length * 8) {
+    if (crc7 & 0x7f != 0) {
+      crc7 ^= pn;
+    }
+
+    // move left
+    crc7 = crc7 << 1;
+    unsigned short nextBit = nextByte & 0x7f;
+    nextByte = nextByte << 1;
+    nextBit = nextBit >> 7;
+    crc7 = crc7 | nextBit;
+    bitCount++;
+    if (bitCount % 8 == 0) {
+      byteCount++;
+      if (byteCount == length - 1)
+        nextByte = 0;
+      else
+        nextByte = src[byteCount];
+    }
+    
+  } // while loop
+
+  return crc7 >> 1;
+}
+
