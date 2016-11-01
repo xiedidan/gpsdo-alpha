@@ -131,7 +131,7 @@ typedef struct _GSIP_MSG {
   GSIP_TYPE type;
   GSIP_OPERATION operation;
   GSIP_PAYLOAD payload;
-  unsigned short crc7;
+  unsigned char crc7;
 } GSIP_MSG;
 
 void initGSIP();
@@ -140,7 +140,7 @@ void writeMsg();
 
 // helper
 void execCmd(void* error, void* param);
-unsigned short calcCRC7(unsigned char* src, int length);
+unsigned char calcCRC7(unsigned char* src, int length);
 void resetState();
 
 #endif
