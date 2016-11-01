@@ -2,6 +2,7 @@
 #include "eventLoop.h"
 #include "protocol.h"
 
+/*
 typedef enum _GSIP_STATE {
   GSIP_INIT = 0,
   GSIP_READ_HEADER,
@@ -10,9 +11,19 @@ typedef enum _GSIP_STATE {
   GSIP_READ_PAYLOAD,
   GSIP_READ_CRC
 } GSIP_STATE;
+*/
+
+typedef enum _GSIP_STATE {
+  GSIP_INIT = 0,
+  GSIP_READ_HEADER,
+  GSIP_READ_OPERATION,
+  GSIP_READ_SIZE,
+  GSIP_READ_PAYLOAD,
+  GSIP_READ_CRC
+} GSIP_STATE;
 
 GSIP_STATE state = GSIP_INIT;
-unsigned char header[4] = { 0x55, 0x55, 0xaa, 0xaa };
+unsigned char header[2] = { '#', 'S' };
 int headerPos = 3;
 int splitFlag = 0;
 GSIP_TYPE type = Cmd;
