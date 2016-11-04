@@ -63,7 +63,7 @@ typedef struct _GSIP_MSG {
 
 void initGSIP();
 void readMsg();
-void writeMsg();
+void writeMsg(void* error, void* param);
 
 // helper
 void execCmd(void* error, void* param);

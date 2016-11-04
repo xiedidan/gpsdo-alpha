@@ -19,7 +19,7 @@ void setup()
 
 void loop()
 {
-  getMsg();
+  readMsg();
 
   processEvent();
 }
