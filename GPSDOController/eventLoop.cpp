@@ -21,6 +21,10 @@ void processEvent() {
 
         // remove current event
         free(currEvent->eventName);
+        if (currEvent->error)
+          free(currEvent->error);
+        if (currEvent->param)
+          free(currEvent->param);
         free(currEvent);
       }
   }

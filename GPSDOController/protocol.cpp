@@ -137,8 +137,6 @@ void writeMsg(void* error, void* param) {
   if (error == NULL && msg != NULL) {
     writeMsgImpl(msg->operation, msg->size, msg->payload);
   }
-
-  // TODO : free error and param
 }
 
 // 'cmd' event callback
