@@ -21,10 +21,12 @@ void processEvent() {
 
         // remove current event
         free(currEvent->eventName);
+        /* callback should cleanup by itself
         if (currEvent->error)
           free(currEvent->error);
         if (currEvent->param)
           free(currEvent->param);
+        */
         free(currEvent);
       }
   }

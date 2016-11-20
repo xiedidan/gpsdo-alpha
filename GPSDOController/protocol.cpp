@@ -2,6 +2,8 @@
 #include "eventLoop.h"
 #include "protocol.h"
 
+char* id = "GPSDO";
+
 typedef enum _GSIP_STATE {
   GSIP_INIT = 0,
   GSIP_READ_HEADER,
@@ -118,7 +120,10 @@ void writeMsgImpl(GSIP_OPERATION operation, unsigned short size, GSIP_PAYLOAD pa
   memcpy(buf, header, 2);
   buf[2] = operation;
   buf[3] = size;
-  memcpy(buf + 4, &payload, size);
+  if (size < 5)
+    memcpy(buf + 4, &payload, size);
+  else
+    memcpy(buf + 4, payload.str, size);
   
   // create crc7
   buf[len - 1] = calcCRC7(buf + 2, size + 2);
@@ -137,27 +142,43 @@ void writeMsg(void* error, void* param) {
   if (error == NULL && msg != NULL) {
     writeMsgImpl(msg->operation, msg->size, msg->payload);
   }
+
+  // clean up
+  if (error)
+    free(error);
+  if (param) {
+    if (msg->size > 4)
+      free(msg->payload.str);
+    free(param);
+  }
 }
 
 // 'cmd' event callback
 void execCmd(void* error, void* param) {
   GSIP_MSG* msg = (GSIP_MSG*)param;
-  // TODO : check crc7
-  switch(msg->operation) {
-    case ReadVersion:
-    // TODO : return firmware version
-    break;
+  // check crc7
+  if (msg->crc7 != calcCRC7((unsigned char*)(msg->operation), msg->size + 2))
+    // TODO : reply error?
+    return;
 
-    case ReadFreq:
-    // TODO : read freq and return
+  GSIP_MSG* reply = (GSIP_MSG*)malloc(sizeof(GSIP_MSG));
+  
+  switch (msg->operation) {  
+    case ReadID:
+      // write ID msg
+      memcpy(reply->header, header, 2);
+      msg->operation = ID;
+      msg->size = 5;
+      msg->payload.str = (char*)malloc(msg->size);
+      memcpy(msg->payload.str, id, msg->size);
+      
+      trigger("writeMsg", NULL, msg);
     break;
     
     default: 
     // unknown operation
     break;
   }
-
-  free(msg);
 }
 
 // the implementation is not optimized for speed, but it's readable and easy to understand
