@@ -205,8 +205,25 @@ namespace GPSDOControllerSerialTest
         }
     }
 
+    public delegate void ParserCallbackDelegate(string header, GSIP_OPERATION operation, byte size, object payload, byte crc);
+
     class GSIPService
     {
+        private static ParserCallbackDelegate parserCallback;
+
+        public static ParserCallbackDelegate ParserCallback
+        {
+            get
+            {
+                return parserCallback;
+            }
+
+            set
+            {
+                parserCallback = value;
+            }
+        }
+
         public static void writeMessage(SerialPort serialPort, GSIP_Message msg)
         {
             if (serialPort.IsOpen)
@@ -216,7 +233,17 @@ namespace GPSDOControllerSerialTest
             }
         }
 
-        // TODO : parse message
+        private static void parseMessage(object sender, SerialDataReceivedEventArgs e)
+        {
+            SerialPort serialPort = (SerialPort)sender;
+            while (serialPort.BytesToRead > 0)
+            {
+                byte data = (byte)serialPort.ReadByte();
+
+                // TODO : parser FSM
+                // ParserCallback.Invoke();
+            }
+        }
 
         public static byte calcCrc7(byte[] src, int length)
         {
